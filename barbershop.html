@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Philly Fresh Cuts</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #181818;
+        }
+
+        nav h2 {
+            color: #f5c542;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #ccc;
+            font-size: 18px;
+            max-width: 550px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            background: #f5c542;
+            color: #111;
+            padding: 14px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #1d1d1d;
+            padding: 30px;
+            border-radius: 10px;
+            width: 280px;
+        }
+
+        .card h3 {
+            color: #f5c542;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 25px;
+            margin: 15px 0;
+        }
+
+        footer {
+            background: #181818;
+            padding: 30px;
+            text-align: center;
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            nav {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>Philly Fresh Cuts</h2>
+
+    <div>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</nav>
+
+
+<div class="hero">
+
+    <h1>Look Fresh.<br>Feel Fresh.</h1>
+
+    <p>
+        Professional cuts and clean fades
+        right here in Philadelphia.
+    </p>
+
+    <a class="button" href="#contact">
+        Book an Appointment
+    </a>
+
+</div>
+
+
+<section id="services">
+
+    <h2>Our Services</h2>
+
+    <div class="services">
+
+        <div class="card">
+
+            <h3>Fresh Fade</h3>
+
+            <p>
+                Clean fade with your choice
+                of style.
+            </p>
+
+            <div class="price">$30</div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Haircut + Beard</h3>
+
+            <p>
+                Full haircut and beard lineup.
+            </p>
+
+            <div class="price">$40</div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Kids Cut</h3>
+
+            <p>
+                Clean and fresh haircut
+                for kids.
+            </p>
+
+            <div class="price">$25</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="contact">
+
+    <h2>Ready for a Fresh Cut?</h2>
+
+    <p>
+        Call or message us to book your appointment.
+    </p>
+
+    <br>
+
+    <a class="button"
+       href="mailto:majperry2025@gmail.com">
+
+        Book Now
+
+    </a>
+
+</section>
+
+
+<footer>
+
+    © 2026 Philly Fresh Cuts
+
+</footer>
+
+
+</body>
+
+</html>
