@@ -5,9 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+        content="Lynx & Co. Web Studio creates modern, high-quality websites for businesses ready to stand out online.">
+
+    <meta name="theme-color" content="#080808">
+
     <title>Lynx & Co. Web Studio | Websites That Stand Out</title>
 
     <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
 
         * {
             margin: 0;
@@ -21,27 +30,94 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #0A0A0A;
-            color: #F5F5F5;
+            background: #080808;
+            color: #f5f5f5;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
         }
 
 
-        /* =========================
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+            --black: #080808;
+            --black-soft: #0d0d0d;
+            --card: #111111;
+            --card-hover: #151515;
+            --border: rgba(255, 255, 255, 0.09);
+            --border-strong: rgba(255, 255, 255, 0.15);
+            --white: #f5f5f5;
+            --muted: #999999;
+            --yellow: #f4c430;
+            --yellow-light: #ffd84d;
+        }
+
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        .container {
+            width: min(1180px, 84%);
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            color: var(--yellow);
+
+            font-size: 0.78rem;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 1px;
+            background: var(--yellow);
+        }
+
+        .yellow {
+            color: var(--yellow);
+        }
+
+
+        /* =====================================================
            NAVIGATION
-        ========================= */
+        ===================================================== */
 
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 8%;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             position: sticky;
             top: 0;
-            background: rgba(10, 10, 10, 0.94);
-            backdrop-filter: blur(10px);
             z-index: 1000;
+
+            border-bottom: 1px solid var(--border);
+
+            background: rgba(8, 8, 8, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .nav-inner {
+            width: min(1180px, 84%);
+            min-height: 82px;
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
@@ -50,371 +126,917 @@
         }
 
         .logo img {
-            width: 130px;
+            width: 135px;
             height: auto;
             display: block;
         }
 
         nav ul {
             display: flex;
+            align-items: center;
+            gap: 34px;
+
             list-style: none;
-            gap: 30px;
         }
 
         nav a {
-            color: #BDBDBD;
+            color: #aaa;
             text-decoration: none;
-            font-size: 0.95rem;
-            transition: 0.3s;
+            font-size: 0.9rem;
+            transition: color 0.25s ease;
         }
 
         nav a:hover {
-            color: #F4C430;
+            color: var(--white);
+        }
+
+        .nav-cta {
+            padding: 10px 17px;
+
+            border: 1px solid var(--border-strong);
+            border-radius: 7px;
+
+            color: var(--white);
+        }
+
+        .nav-cta:hover {
+            border-color: var(--yellow);
+            color: var(--yellow);
         }
 
 
-        /* =========================
+        /* =====================================================
            HERO
-        ========================= */
+        ===================================================== */
 
         .hero {
-            min-height: 85vh;
+            min-height: calc(100vh - 82px);
+
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 80px 8%;
-            max-width: 1200px;
-            margin: auto;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-label {
-            color: #F4C430;
-            font-size: 0.9rem;
-            font-weight: bold;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 650px;
+            height: 650px;
+
+            right: -280px;
+            top: 70px;
+
+            border-radius: 50%;
+
+            background: rgba(244, 196, 48, 0.055);
+
+            filter: blur(70px);
+
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+
+            background-size: 70px 70px;
+
+            mask-image: linear-gradient(to bottom, black, transparent 80%);
+            -webkit-mask-image: linear-gradient(to bottom, black, transparent 80%);
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            padding: 105px 0 125px;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 6.5rem);
-            line-height: 0.95;
-            max-width: 950px;
-            margin-bottom: 30px;
-            letter-spacing: -3px;
+            max-width: 1000px;
+
+            margin: 24px 0 30px;
+
+            font-size: clamp(3.7rem, 8vw, 7.7rem);
+
+            line-height: 0.9;
+            letter-spacing: -6px;
+            font-weight: 700;
         }
 
         .hero h1 span {
-            color: #F4C430;
+            color: var(--yellow);
         }
 
-        .hero p {
-            max-width: 650px;
-            color: #AFAFAF;
+        .hero-description {
+            max-width: 610px;
+
+            color: #a5a5a5;
+
             font-size: 1.15rem;
-            margin-bottom: 35px;
+
+            line-height: 1.75;
+
+            margin-bottom: 38px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            flex-wrap: wrap;
         }
 
         .button {
-            display: inline-block;
-            background: #F4C430;
-            color: #0A0A0A;
-            padding: 14px 25px;
-            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            min-height: 50px;
+
+            padding: 0 23px;
+
+            border-radius: 7px;
+
+            background: var(--yellow);
+            color: #080808;
+
             text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            width: fit-content;
+
+            font-size: 0.9rem;
+            font-weight: 700;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
         .button:hover {
-            background: #FFD84D;
-            transform: translateY(-2px);
+            background: var(--yellow-light);
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 12px 35px rgba(244, 196, 48, 0.16);
+        }
+
+        .button-outline {
+            background: transparent;
+            color: var(--white);
+
+            border: 1px solid var(--border-strong);
+        }
+
+        .button-outline:hover {
+            background: rgba(255, 255, 255, 0.04);
+
+            border-color: var(--yellow);
+
+            color: var(--yellow);
+
+            box-shadow: none;
+        }
+
+        .hero-bottom {
+            margin-top: 95px;
+
+            display: flex;
+            align-items: center;
+            gap: 35px;
+
+            color: #666;
+
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-bottom-line {
+            width: 65px;
+            height: 1px;
+            background: #333;
         }
 
 
-        /* =========================
-           SECTIONS
-        ========================= */
+        /* =====================================================
+           SECTION
+        ===================================================== */
 
         section {
-            padding: 120px 8%;
-            max-width: 1200px;
-            margin: auto;
+            padding: 135px 0;
         }
 
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+        .section-header {
+            max-width: 720px;
+
+            margin-bottom: 58px;
         }
 
-        .section-intro {
-            color: #AFAFAF;
-            max-width: 600px;
-            margin-bottom: 45px;
+        .section-header h2 {
+            margin-top: 16px;
+
+            font-size: clamp(2.8rem, 5vw, 5rem);
+
+            line-height: 0.98;
+            letter-spacing: -3px;
         }
 
-
-        /* =========================
-           SECTION HEADING
-        ========================= */
-
-        .section-heading {
-            margin-bottom: 55px;
+        .section-header h2 span {
+            color: var(--yellow);
         }
 
-        .section-heading span {
-            color: #F4C430;
-            font-size: 0.8rem;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
+        .section-header p {
+            max-width: 590px;
 
-        .section-heading h2 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            line-height: 1;
-            letter-spacing: -2px;
-            margin: 12px 0 20px;
-        }
+            margin-top: 22px;
 
-        .section-heading h2 em {
-            color: #F4C430;
-            font-style: normal;
-        }
+            color: var(--muted);
 
-        .section-heading p {
-            color: #AFAFAF;
-            max-width: 600px;
             font-size: 1.05rem;
         }
 
 
-        /* =========================
-           CARDS
-        ========================= */
+        /* =====================================================
+           SERVICES
+        ===================================================== */
 
-        .services {
+        #services {
+            border-top: 1px solid var(--border);
+        }
+
+        .services-grid {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+
+            gap: 18px;
         }
 
-        .card {
-            background: #121212;
-            padding: 35px;
-            border: 1px solid #242424;
-            border-radius: 16px;
-            min-height: 230px;
+        .service-card {
+            min-height: 330px;
+
+            padding: 34px;
+
             position: relative;
-            overflow: hidden;
-            transition: 0.3s ease;
-        }
 
-        .card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: #F4C430;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: #3a3a3a;
-            background: #161616;
-        }
-
-        .card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .card h3 {
-            font-size: 1.35rem;
-            margin-bottom: 18px;
-            color: #F5F5F5;
-        }
-
-        .card p {
-            color: #999999;
-            line-height: 1.7;
-            font-size: 0.98rem;
-        }
-
-
-        /* =========================
-           PORTFOLIO
-        ========================= */
-
-        #portfolio {
-            padding-top: 100px;
-        }
-
-        .portfolio-heading {
-            margin-bottom: 50px;
-        }
-
-        .portfolio-heading span {
-            color: #F4C430;
-            font-size: 0.8rem;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
-
-        .portfolio-heading h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1;
-            letter-spacing: -2px;
-            margin: 12px 0 20px;
-        }
-
-        .portfolio-heading p {
-            color: #AFAFAF;
-            max-width: 600px;
-        }
-
-        .portfolio-card {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #131313,
+                    #0e0e0e
+                );
+
+            border: 1px solid var(--border);
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
         }
 
-        .portfolio-card .button {
-            margin-top: 25px;
+        .service-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            right: -100px;
+            bottom: -100px;
+
+            border-radius: 50%;
+
+            background: rgba(244, 196, 48, 0.05);
+
+            transition: 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+
+            border-color: rgba(244, 196, 48, 0.35);
+
+            background: var(--card-hover);
+        }
+
+        .service-card:hover::after {
+            transform: scale(1.4);
+        }
+
+        .service-number {
+            color: var(--yellow);
+
+            font-size: 0.72rem;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            margin-bottom: auto;
+        }
+
+        .service-card h3 {
+            margin-top: 65px;
+            margin-bottom: 14px;
+
+            font-size: 1.45rem;
+        }
+
+        .service-card p {
+            color: #909090;
+
+            font-size: 0.95rem;
+
+            line-height: 1.75;
         }
 
 
-        /* =========================
+        /* =====================================================
+           WORK
+        ===================================================== */
+
+        #work {
+            background: #0c0c0c;
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .work-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .work-card {
+            background: #111;
+
+            border: 1px solid var(--border);
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-7px);
+
+            border-color: rgba(244, 196, 48, 0.35);
+        }
+
+        .project-preview {
+            height: 245px;
+
+            padding: 16px;
+
+            background: #171717;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .browser {
+            height: 100%;
+            width: 100%;
+
+            overflow: hidden;
+
+            border: 1px solid #303030;
+            border-radius: 8px 8px 3px 3px;
+
+            background: #0a0a0a;
+
+            box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+        }
+
+        .browser-bar {
+            height: 25px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 5px;
+
+            padding-left: 9px;
+
+            background: #222;
+        }
+
+        .browser-dot {
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: #666;
+        }
+
+        .preview-page {
+            height: calc(100% - 25px);
+
+            padding: 24px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .preview-page h4 {
+            font-size: 1.3rem;
+
+            margin-bottom: 11px;
+        }
+
+        .preview-line {
+            width: 78%;
+            height: 5px;
+
+            background: #333;
+
+            border-radius: 10px;
+
+            margin-bottom: 8px;
+        }
+
+        .preview-line.short {
+            width: 52%;
+        }
+
+        .preview-button {
+            width: 74px;
+            height: 21px;
+
+            margin-top: 12px;
+
+            border-radius: 4px;
+
+            background: var(--yellow);
+        }
+
+        .cuts .preview-page {
+            background:
+                linear-gradient(
+                    135deg,
+                    #191919,
+                    #272727 55%,
+                    #0d0d0d
+                );
+        }
+
+        .cuts h4 {
+            color: var(--yellow);
+        }
+
+        .grill .preview-page {
+            background:
+                linear-gradient(
+                    135deg,
+                    #26150c,
+                    #17100d 55%,
+                    #0b0b0b
+                );
+        }
+
+        .grill h4 {
+            color: #e9a23b;
+        }
+
+        .auto .preview-page {
+            background:
+                linear-gradient(
+                    135deg,
+                    #11171d,
+                    #1c232a 55%,
+                    #090909
+                );
+        }
+
+        .auto h4 {
+            color: #e0e5ea;
+        }
+
+        .work-info {
+            padding: 28px;
+        }
+
+        .work-type {
+            color: var(--yellow);
+
+            font-size: 0.7rem;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .work-info h3 {
+            margin: 9px 0 10px;
+
+            font-size: 1.35rem;
+        }
+
+        .work-info p {
+            min-height: 55px;
+
+            color: #929292;
+
+            font-size: 0.92rem;
+
+            line-height: 1.65;
+        }
+
+        .work-info .button {
+            margin-top: 23px;
+
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           PROCESS
+        ===================================================== */
+
+        .process-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 0;
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .process-step {
+            min-height: 245px;
+
+            padding: 30px;
+
+            border-right: 1px solid var(--border);
+        }
+
+        .process-step:last-child {
+            border-right: none;
+        }
+
+        .process-number {
+            color: var(--yellow);
+
+            font-size: 0.75rem;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .process-step h3 {
+            margin: 55px 0 12px;
+
+            font-size: 1.2rem;
+        }
+
+        .process-step p {
+            color: #858585;
+
+            font-size: 0.9rem;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
            ABOUT
-        ========================= */
+        ===================================================== */
 
         .about {
             background: #101010;
-            max-width: none;
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
-        .about-content {
-            max-width: 1200px;
-            margin: auto;
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 0.9fr 1.1fr;
+
+            gap: 90px;
+
+            align-items: center;
         }
 
-        .about-content span {
-            color: #F4C430;
-            font-size: 0.8rem;
-            font-weight: bold;
-            letter-spacing: 3px;
+        .about-title h2 {
+            margin-top: 16px;
+
+            font-size: clamp(3rem, 5vw, 5rem);
+
+            line-height: 0.95;
+
+            letter-spacing: -4px;
         }
 
-        .about h2 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            line-height: 1;
-            letter-spacing: -2px;
-            margin: 12px 0 25px;
+        .about-title h2 span {
+            color: var(--yellow);
         }
 
-        .about p {
-            color: #AFAFAF;
-            max-width: 700px;
-            font-size: 1.1rem;
+        .about-copy {
+            color: #999;
+
+            font-size: 1.05rem;
+
+            line-height: 1.9;
+        }
+
+        .about-copy p + p {
+            margin-top: 20px;
         }
 
 
-        /* =========================
-           CONTACT
-        ========================= */
+        /* =====================================================
+           CTA
+        ===================================================== */
 
-        .contact {
+        .cta {
+            position: relative;
+
             text-align: center;
-            padding-top: 140px;
-            padding-bottom: 140px;
+
+            overflow: hidden;
         }
 
-        .contact span {
-            color: #F4C430;
-            font-size: 0.8rem;
-            font-weight: bold;
-            letter-spacing: 3px;
+        .cta::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            border-radius: 50%;
+
+            background: rgba(244, 196, 48, 0.06);
+
+            filter: blur(70px);
+
+            pointer-events: none;
         }
 
-        .contact h2 {
-            font-size: clamp(2.8rem, 6vw, 5rem);
-            line-height: 1;
-            letter-spacing: -2px;
-            margin: 15px 0 20px;
+        .cta-content {
+            position: relative;
+            z-index: 2;
         }
 
-        .contact p {
-            color: #AFAFAF;
-            margin: 15px auto 30px;
-            max-width: 550px;
+        .cta h2 {
+            max-width: 850px;
+
+            margin: 18px auto 20px;
+
+            font-size: clamp(3rem, 7vw, 6.5rem);
+
+            line-height: 0.92;
+
+            letter-spacing: -5px;
+        }
+
+        .cta h2 span {
+            color: var(--yellow);
+        }
+
+        .cta p {
+            max-width: 570px;
+
+            margin: 0 auto 35px;
+
+            color: #929292;
+
             font-size: 1.05rem;
         }
 
 
-        /* =========================
+        /* =====================================================
            FOOTER
-        ========================= */
+        ===================================================== */
 
         footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid var(--border);
+
+            padding: 35px 0;
+        }
+
+        .footer-inner {
+            width: min(1180px, 84%);
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-brand {
             color: #777;
-            font-size: 0.9rem;
+
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 22px;
+        }
+
+        .footer-links a {
+            color: #666;
+
+            font-size: 0.8rem;
+
+            text-decoration: none;
+
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--yellow);
         }
 
 
-        /* =========================
+        /* =====================================================
            MOBILE
-        ========================= */
+        ===================================================== */
 
-        @media (max-width: 800px) {
+        @media (max-width: 950px) {
 
-            nav {
-                padding: 14px 6%;
-            }
-
-            .logo img {
-                width: 115px;
-            }
-
-            nav ul {
-                gap: 15px;
-            }
-
-            nav a {
-                font-size: 0.8rem;
-            }
-
-            .hero {
-                padding: 70px 6%;
-            }
-
-            .hero h1 {
-                letter-spacing: -2px;
-            }
-
-            section {
-                padding: 80px 6%;
-            }
-
-            .services {
+            .services-grid,
+            .work-grid {
                 grid-template-columns: 1fr;
             }
 
-            .card {
+            .service-card {
+                min-height: 270px;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-step:nth-child(2) {
+                border-right: none;
+            }
+
+            .process-step:nth-child(-n+2) {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .container,
+            .nav-inner,
+            .footer-inner {
+                width: 88%;
+            }
+
+            nav ul {
+                gap: 14px;
+            }
+
+            nav a {
+                font-size: 0.78rem;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .logo img {
+                width: 112px;
+            }
+
+            .hero {
                 min-height: auto;
             }
 
-            .section-heading h2,
-            .portfolio-heading h2,
-            .about h2 {
-                letter-spacing: -1.5px;
+            .hero-content {
+                padding: 90px 0 100px;
             }
+
+            .hero h1 {
+                font-size: clamp(3.3rem, 16vw, 5.5rem);
+
+                letter-spacing: -4px;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .hero-bottom {
+                margin-top: 70px;
+            }
+
+            section {
+                padding: 95px 0;
+            }
+
+            .section-header h2 {
+                font-size: clamp(2.8rem, 13vw, 4rem);
+
+                letter-spacing: -2.5px;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                min-height: 210px;
+
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .process-step:last-child {
+                border-bottom: none;
+            }
+
+            .process-step:nth-child(2) {
+                border-right: none;
+            }
+
+            .project-preview {
+                height: 220px;
+            }
+
+            .cta h2 {
+                font-size: clamp(3rem, 15vw, 5rem);
+
+                letter-spacing: -3px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+
+                gap: 18px;
+
+                text-align: center;
+            }
+
+        }
+
+
+        @media (max-width: 430px) {
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 0.7rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-actions .button {
+                width: 100%;
+            }
+
         }
 
     </style>
@@ -423,255 +1045,813 @@
 
 <body>
 
-    <!-- NAVIGATION -->
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
 
     <nav>
 
-        <div class="logo">
-            <img src="lynx.png?v=2" alt="Lynx & Co. Web Studio">
-        </div>
+        <div class="nav-inner">
 
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Work</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
+            <a href="#" class="logo" aria-label="Lynx & Co. Home">
+
+                <img
+                    src="lynx.png?v=2"
+                    alt="Lynx & Co. Web Studio"
+                >
+
+            </a>
+
+
+            <ul>
+
+                <li>
+                    <a href="#services">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#work">
+                        Work
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="#contact"
+                        class="nav-cta"
+                    >
+                        Start a Project
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
 
     </nav>
 
 
-    <!-- HERO -->
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
 
     <main>
 
-        <div class="hero">
 
-            <div class="hero-label">
-                Lynx & Co. Web Studio
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero">
+
+            <div class="container hero-content">
+
+                <div class="eyebrow">
+                    Lynx & Co. Web Studio
+                </div>
+
+
+                <h1>
+
+                    Websites built to
+                    <span>
+                        stand out.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Modern, high-quality websites designed to help
+                    businesses look professional, attract customers,
+                    and grow online.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a
+                        href="#contact"
+                        class="button"
+                    >
+                        Start a Project
+                        <span>→</span>
+                    </a>
+
+
+                    <a
+                        href="#work"
+                        class="button button-outline"
+                    >
+                        View Our Work
+                    </a>
+
+                </div>
+
+
+                <div class="hero-bottom">
+
+                    <span>
+                        Design
+                    </span>
+
+                    <div class="hero-bottom-line"></div>
+
+                    <span>
+                        Development
+                    </span>
+
+                    <div class="hero-bottom-line"></div>
+
+                    <span>
+                        Growth
+                    </span>
+
+                </div>
+
             </div>
 
-            <h1>
-                Websites built to
-                <span>stand out.</span>
-            </h1>
-
-            <p>
-                Modern, high-quality websites designed to help
-                businesses look professional, attract customers,
-                and grow online.
-            </p>
-
-            <a class="button" href="#contact">
-                Start a Project
-            </a>
-
-        </div>
+        </section>
 
 
-        <!-- SERVICES -->
+
+        <!-- =================================================
+             SERVICES
+        ================================================== -->
 
         <section id="services">
 
-            <div class="section-heading">
+            <div class="container">
 
-                <span>WHAT WE DO</span>
+                <div class="section-header">
 
-                <h2>
-                    Built for businesses<br>
-                    ready to <em>stand out.</em>
-                </h2>
-
-                <p>
-                    Everything a growing business needs to build
-                    a stronger presence online.
-                </p>
-
-            </div>
+                    <div class="eyebrow">
+                        What We Do
+                    </div>
 
 
-            <div class="services">
+                    <h2>
 
-                <div class="card">
+                        Built for businesses
+                        ready to
+                        <span>
+                            stand out.
+                        </span>
 
-                    <h3>01 — Website Design</h3>
+                    </h2>
+
 
                     <p>
-                        Clean, modern websites designed around your
-                        business, your brand, and the customers you want to reach.
+
+                        Everything a growing business needs to
+                        create a stronger presence online.
+
                     </p>
 
                 </div>
 
 
-                <div class="card">
+                <div class="services-grid">
 
-                    <h3>02 — Mobile Design</h3>
+
+                    <article class="service-card">
+
+                        <div class="service-number">
+                            01 / DESIGN
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Website Design
+                            </h3>
+
+                            <p>
+
+                                Clean, modern websites designed
+                                around your business, your brand,
+                                and the customers you want to reach.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card">
+
+                        <div class="service-number">
+                            02 / EXPERIENCE
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Mobile Design
+                            </h3>
+
+                            <p>
+
+                                Responsive experiences built to look
+                                sharp and work smoothly across phones,
+                                tablets, and desktops.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card">
+
+                        <div class="service-number">
+                            03 / DISCOVERY
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                SEO Setup
+                            </h3>
+
+                            <p>
+
+                                Essential search optimization that
+                                helps your business get discovered
+                                and makes your website easier to find.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             WORK
+        ================================================== -->
+
+        <section id="work">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div class="eyebrow">
+                        Selected Work
+                    </div>
+
+
+                    <h2>
+
+                        Projects that
+                        <span>
+                            make an impact.
+                        </span>
+
+                    </h2>
+
 
                     <p>
-                        Responsive experiences built to look sharp
-                        and work smoothly across phones, tablets, and desktops.
+
+                        Website concepts created by Lynx & Co.
+                        for businesses in different industries.
+
                     </p>
 
                 </div>
 
 
-                <div class="card">
+                <div class="work-grid">
 
-                    <h3>03 — SEO Setup</h3>
+
+                    <!-- PROJECT 1 -->
+
+                    <article class="work-card">
+
+
+                        <div class="project-preview cuts">
+
+                            <div class="browser">
+
+                                <div class="browser-bar">
+
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+
+                                </div>
+
+
+                                <div class="preview-page">
+
+                                    <h4>
+                                        Philly Fresh Cuts
+                                    </h4>
+
+                                    <div class="preview-line"></div>
+
+                                    <div class="preview-line short"></div>
+
+                                    <div class="preview-button"></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="work-info">
+
+                            <div class="work-type">
+                                Barbershop
+                            </div>
+
+
+                            <h3>
+                                Philly Fresh Cuts
+                            </h3>
+
+
+                            <p>
+
+                                A modern website concept built
+                                to give a local barbershop a
+                                stronger online presence.
+
+                            </p>
+
+
+                            <a
+                                href="barbershop.html"
+                                class="button"
+                            >
+                                View Demo →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PROJECT 2 -->
+
+                    <article class="work-card">
+
+
+                        <div class="project-preview grill">
+
+                            <div class="browser">
+
+                                <div class="browser-bar">
+
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+
+                                </div>
+
+
+                                <div class="preview-page">
+
+                                    <h4>
+                                        King's Grill
+                                    </h4>
+
+                                    <div class="preview-line"></div>
+
+                                    <div class="preview-line short"></div>
+
+                                    <div class="preview-button"></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="work-info">
+
+                            <div class="work-type">
+                                Restaurant
+                            </div>
+
+
+                            <h3>
+                                King's Grill
+                            </h3>
+
+
+                            <p>
+
+                                A restaurant website concept
+                                designed to showcase the menu
+                                and bring in more customers.
+
+                            </p>
+
+
+                            <a
+                                href="#"
+                                class="button"
+                            >
+                                Coming Soon →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PROJECT 3 -->
+
+                    <article class="work-card">
+
+
+                        <div class="project-preview auto">
+
+                            <div class="browser">
+
+                                <div class="browser-bar">
+
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+
+                                </div>
+
+
+                                <div class="preview-page">
+
+                                    <h4>
+                                        Prime Auto Detail
+                                    </h4>
+
+                                    <div class="preview-line"></div>
+
+                                    <div class="preview-line short"></div>
+
+                                    <div class="preview-button"></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="work-info">
+
+                            <div class="work-type">
+                                Auto Detailing
+                            </div>
+
+
+                            <h3>
+                                Prime Auto Detail
+                            </h3>
+
+
+                            <p>
+
+                                A professional website concept
+                                for a mobile car-detailing business.
+
+                            </p>
+
+
+                            <a
+                                href="#"
+                                class="button"
+                            >
+                                Coming Soon →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PROCESS
+        ================================================== -->
+
+        <section id="process">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div class="eyebrow">
+                        Our Process
+                    </div>
+
+
+                    <h2>
+
+                        Simple process.
+                        <span>
+                            Strong result.
+                        </span>
+
+                    </h2>
+
 
                     <p>
-                        Essential search optimization that helps your
-                        business get discovered and makes your website easier to find.
+
+                        From the first conversation to the
+                        finished website, we keep the process
+                        clear and focused.
+
                     </p>
 
                 </div>
 
+
+                <div class="process-grid">
+
+
+                    <div class="process-step">
+
+                        <div class="process-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Discover
+                        </h3>
+
+                        <p>
+
+                            We learn about your business,
+                            your goals, and the customers
+                            you want to reach.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="process-step">
+
+                        <div class="process-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Design
+                        </h3>
+
+                        <p>
+
+                            We create a visual direction
+                            that fits your brand and makes
+                            a strong first impression.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="process-step">
+
+                        <div class="process-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Build
+                        </h3>
+
+                        <p>
+
+                            Your design becomes a responsive,
+                            polished website built for real
+                            users.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="process-step">
+
+                        <div class="process-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Launch
+                        </h3>
+
+                        <p>
+
+                            We make sure everything is ready
+                            before putting your new website
+                            in front of customers.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
             </div>
 
         </section>
 
 
-        <!-- PORTFOLIO -->
 
-        <section id="portfolio">
+        <!-- =================================================
+             ABOUT
+        ================================================== -->
 
-            <div class="portfolio-heading">
+        <section
+            id="about"
+            class="about"
+        >
 
-                <span>SELECTED WORK</span>
+            <div class="container about-grid">
+
+
+                <div class="about-title">
+
+                    <div class="eyebrow">
+                        About Lynx & Co.
+                    </div>
+
+
+                    <h2>
+
+                        Built with
+                        <span>
+                            purpose.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="about-copy">
+
+                    <p>
+
+                        Lynx & Co. Web Studio creates modern
+                        websites for businesses that want to
+                        make a stronger first impression online.
+
+                    </p>
+
+
+                    <p>
+
+                        We believe a website should do more than
+                        simply exist. It should communicate what
+                        makes a business different, build trust,
+                        and give customers a reason to take action.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTACT CTA
+        ================================================== -->
+
+        <section
+            id="contact"
+            class="cta"
+        >
+
+            <div class="container cta-content">
+
+                <div class="eyebrow">
+                    Let's Work Together
+                </div>
+
 
                 <h2>
-                    Projects that<br>
-                    <span>make an impact.</span>
+
+                    Ready to
+                    <span>
+                        stand out?
+                    </span>
+
                 </h2>
 
-                <p>
-                    Explore website concepts created by Lynx & Co.
-                </p>
-
-            </div>
-
-
-            <div class="services">
-
-                <div class="card portfolio-card">
-
-                    <div>
-
-                        <h3>Philly Fresh Cuts</h3>
-
-                        <p>
-                            A modern website concept created
-                            for a barbershop.
-                        </p>
-
-                    </div>
-
-                    <a class="button" href="barbershop.html">
-                        View Demo
-                    </a>
-
-                </div>
-
-
-                <div class="card portfolio-card">
-
-                    <div>
-
-                        <h3>King's Grill</h3>
-
-                        <p>
-                            A restaurant website concept designed
-                            to showcase a menu and attract customers.
-                        </p>
-
-                    </div>
-
-                    <a class="button" href="#">
-                        View Demo
-                    </a>
-
-                </div>
-
-
-                <div class="card portfolio-card">
-
-                    <div>
-
-                        <h3>Prime Auto Detail</h3>
-
-                        <p>
-                            A professional website concept for
-                            a mobile car-detailing business.
-                        </p>
-
-                    </div>
-
-                    <a class="button" href="#">
-                        View Demo
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ABOUT -->
-
-        <section id="about" class="about">
-
-            <div class="about-content">
-
-                <span>ABOUT LYNX & CO.</span>
-
-                <h2>
-                    Built With<br>
-                    <span>Purpose.</span>
-                </h2>
 
                 <p>
-                    Lynx & Co. Web Studio creates modern websites
-                    for businesses that want to make a stronger
-                    first impression online.
+
+                    Let's create a website that makes your
+                    business impossible to overlook.
+
                 </p>
+
+
+                <a
+                    href="mailto:majperry2025@gmail.com"
+                    class="button"
+                >
+                    Start a Project →
+                </a>
 
             </div>
 
         </section>
 
-
-        <!-- CONTACT -->
-
-        <section id="contact" class="contact">
-
-            <span>LET'S WORK TOGETHER</span>
-
-            <h2>
-                Ready to Build?
-            </h2>
-
-            <p>
-                Let's create a website that makes your business
-                impossible to overlook.
-            </p>
-
-            <a class="button" href="mailto:majperry2025@gmail.com">
-                Contact Lynx & Co.
-            </a>
-
-        </section>
 
     </main>
 
 
-    <!-- FOOTER -->
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
     <footer>
 
-        © 2026 Lynx & Co. Web Studio — All rights reserved.
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+
+                © 2026 Lynx & Co. Web Studio —
+                All rights reserved.
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#work">
+                    Work
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
 
     </footer>
+
 
 </body>
 
