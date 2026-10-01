@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Lynx & Co. Web Studio creates modern, high-quality websites for businesses ready to stand out online.">
+        content="Lynx & Co. Web Studio creates modern websites for businesses ready to stand out online.">
 
-    <meta name="theme-color" content="#080808">
+    <meta name="theme-color" content="#101010">
 
     <title>Lynx & Co. Web Studio | Websites That Stand Out</title>
 
@@ -30,7 +30,7 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #080808;
+            background: #101010;
             color: #f5f5f5;
             line-height: 1.6;
             overflow-x: hidden;
@@ -41,16 +41,162 @@
         }
 
         :root {
-            --black: #080808;
-            --black-soft: #0d0d0d;
-            --card: #111111;
-            --card-hover: #151515;
+            --black: #101010;
+            --black-soft: #151515;
+            --card: #181818;
+            --card-hover: #1d1d1d;
+
             --border: rgba(255, 255, 255, 0.09);
-            --border-strong: rgba(255, 255, 255, 0.15);
+            --border-strong: rgba(255, 255, 255, 0.16);
+
             --white: #f5f5f5;
             --muted: #999999;
+
             --yellow: #f4c430;
             --yellow-light: #ffd84d;
+        }
+
+
+        /* =====================================================
+           SCROLLING LYNX BACKGROUND
+        ===================================================== */
+
+        .lynx-background {
+            position: fixed;
+
+            width: min(850px, 75vw);
+            height: min(850px, 75vw);
+
+            left: 50%;
+            top: 42%;
+
+            transform:
+                translate3d(-50%, -50%, 0)
+                scale(1);
+
+            z-index: -2;
+
+            pointer-events: none;
+
+            opacity: 0.105;
+
+            filter:
+                blur(0px)
+                grayscale(100%);
+
+            transition:
+                opacity 0.15s linear,
+                filter 0.15s linear,
+                transform 0.15s linear;
+        }
+
+        .lynx-background::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -120px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(244, 196, 48, 0.12) 0%,
+                    rgba(244, 196, 48, 0.035) 32%,
+                    transparent 70%
+                );
+
+            filter: blur(35px);
+        }
+
+        .lynx-background img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
+
+            opacity: 0.9;
+        }
+
+
+        /* Atmospheric background */
+
+        .background-glow {
+            position: fixed;
+
+            width: 700px;
+            height: 700px;
+
+            right: -300px;
+            top: 5%;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(244, 196, 48, 0.06),
+                    transparent 68%
+                );
+
+            filter: blur(50px);
+
+            pointer-events: none;
+
+            z-index: -3;
+        }
+
+        .background-glow-two {
+            position: fixed;
+
+            width: 600px;
+            height: 600px;
+
+            left: -300px;
+            bottom: 5%;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255, 255, 255, 0.035),
+                    transparent 68%
+                );
+
+            filter: blur(55px);
+
+            pointer-events: none;
+
+            z-index: -3;
+        }
+
+
+        /* Subtle page texture */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            opacity: 0.035;
+
+            background-image:
+                radial-gradient(
+                    rgba(255,255,255,0.8) 0.6px,
+                    transparent 0.6px
+                );
+
+            background-size: 6px 6px;
         }
 
 
@@ -79,8 +225,10 @@
 
         .eyebrow::before {
             content: "";
+
             width: 28px;
             height: 1px;
+
             background: var(--yellow);
         }
 
@@ -91,23 +239,30 @@
 
         nav {
             position: sticky;
+
             top: 0;
+
             z-index: 1000;
 
             border-bottom: 1px solid var(--border);
 
-            background: rgba(8, 8, 8, 0.9);
+            background: rgba(16, 16, 16, 0.82);
+
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
         }
 
         .nav-inner {
             width: min(1180px, 84%);
+
             min-height: 82px;
+
             margin: 0 auto;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
         }
 
@@ -118,13 +273,17 @@
 
         .logo img {
             width: 135px;
+
             height: auto;
+
             display: block;
         }
 
         nav ul {
             display: flex;
+
             align-items: center;
+
             gap: 30px;
 
             list-style: none;
@@ -132,8 +291,11 @@
 
         nav a {
             color: #aaa;
+
             text-decoration: none;
+
             font-size: 0.9rem;
+
             transition: 0.25s ease;
         }
 
@@ -145,6 +307,7 @@
             padding: 10px 17px;
 
             border: 1px solid var(--border-strong);
+
             border-radius: 7px;
 
             color: var(--white);
@@ -152,6 +315,7 @@
 
         .nav-cta:hover {
             border-color: var(--yellow);
+
             color: var(--yellow);
         }
 
@@ -162,8 +326,11 @@
 
         .button {
             display: inline-flex;
+
             align-items: center;
+
             justify-content: center;
+
             gap: 10px;
 
             min-height: 50px;
@@ -173,11 +340,13 @@
             border-radius: 7px;
 
             background: var(--yellow);
+
             color: #080808;
 
             text-decoration: none;
 
             font-size: 0.9rem;
+
             font-weight: 700;
 
             border: none;
@@ -192,21 +361,29 @@
 
         .button:hover {
             background: var(--yellow-light);
+
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(244, 196, 48, 0.16);
+
+            box-shadow:
+                0 12px 35px
+                rgba(244, 196, 48, 0.16);
         }
 
         .button-outline {
             background: transparent;
+
             color: var(--white);
 
             border: 1px solid var(--border-strong);
         }
 
         .button-outline:hover {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255,255,255,0.04);
+
             border-color: var(--yellow);
+
             color: var(--yellow);
+
             box-shadow: none;
         }
 
@@ -219,52 +396,54 @@
             min-height: calc(100vh - 82px);
 
             display: flex;
+
             align-items: center;
 
             position: relative;
+
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-
-            position: absolute;
-
-            width: 650px;
-            height: 650px;
-
-            right: -280px;
-            top: 70px;
-
-            border-radius: 50%;
-
-            background: rgba(244, 196, 48, 0.055);
-
-            filter: blur(70px);
-
-            pointer-events: none;
         }
 
         .hero::after {
             content: "";
 
             position: absolute;
+
             inset: 0;
 
             background-image:
-                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+                linear-gradient(
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                );
 
             background-size: 70px 70px;
 
-            mask-image: linear-gradient(to bottom, black, transparent 80%);
-            -webkit-mask-image: linear-gradient(to bottom, black, transparent 80%);
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 85%
+                );
+
+            -webkit-mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 85%
+                );
 
             pointer-events: none;
         }
 
         .hero-content {
             position: relative;
+
             z-index: 2;
 
             padding: 105px 0 125px;
@@ -275,10 +454,17 @@
 
             margin: 24px 0 30px;
 
-            font-size: clamp(3.7rem, 8vw, 7.7rem);
+            font-size:
+                clamp(
+                    3.7rem,
+                    8vw,
+                    7.7rem
+                );
 
             line-height: 0.9;
+
             letter-spacing: -6px;
+
             font-weight: 700;
         }
 
@@ -300,7 +486,9 @@
 
         .hero-actions {
             display: flex;
+
             align-items: center;
+
             gap: 16px;
 
             flex-wrap: wrap;
@@ -310,19 +498,25 @@
             margin-top: 95px;
 
             display: flex;
+
             align-items: center;
+
             gap: 25px;
 
             color: #666;
 
             font-size: 0.75rem;
+
             letter-spacing: 1px;
+
             text-transform: uppercase;
         }
 
         .hero-bottom-line {
             width: 50px;
+
             height: 1px;
+
             background: #333;
         }
 
@@ -333,19 +527,28 @@
 
         section {
             padding: 135px 0;
+
+            position: relative;
         }
 
         .section-header {
             max-width: 720px;
+
             margin-bottom: 58px;
         }
 
         .section-header h2 {
             margin-top: 16px;
 
-            font-size: clamp(2.8rem, 5vw, 5rem);
+            font-size:
+                clamp(
+                    2.8rem,
+                    5vw,
+                    5rem
+                );
 
             line-height: 0.98;
+
             letter-spacing: -3px;
         }
 
@@ -374,7 +577,10 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 18px;
         }
 
@@ -386,16 +592,18 @@
             position: relative;
 
             display: flex;
+
             flex-direction: column;
 
             background:
                 linear-gradient(
                     145deg,
-                    #131313,
-                    #0e0e0e
+                    rgba(28,28,28,0.94),
+                    rgba(19,19,19,0.94)
                 );
 
             border: 1px solid var(--border);
+
             border-radius: 14px;
 
             overflow: hidden;
@@ -408,14 +616,19 @@
 
         .service-card:hover {
             transform: translateY(-7px);
-            border-color: rgba(244, 196, 48, 0.35);
-            background: var(--card-hover);
+
+            border-color:
+                rgba(244,196,48,0.35);
+
+            background:
+                rgba(30,30,30,0.96);
         }
 
         .service-number {
             color: var(--yellow);
 
             font-size: 0.72rem;
+
             font-weight: 700;
 
             letter-spacing: 2px;
@@ -423,6 +636,7 @@
 
         .service-card h3 {
             margin-top: auto;
+
             margin-bottom: 14px;
 
             font-size: 1.45rem;
@@ -442,24 +656,32 @@
         ===================================================== */
 
         #work {
-            background: #0c0c0c;
+            background:
+                rgba(12,12,12,0.68);
 
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+            border-top:
+                1px solid var(--border);
+
+            border-bottom:
+                1px solid var(--border);
         }
 
         .work-grid {
             display: grid;
 
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns:
+                repeat(3, 1fr);
 
             gap: 18px;
         }
 
         .work-card {
-            background: #111;
+            background:
+                rgba(20,20,20,0.9);
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
+
             border-radius: 14px;
 
             overflow: hidden;
@@ -471,7 +693,9 @@
 
         .work-card:hover {
             transform: translateY(-7px);
-            border-color: rgba(244, 196, 48, 0.35);
+
+            border-color:
+                rgba(244,196,48,0.35);
         }
 
         .project-preview {
@@ -479,29 +703,37 @@
 
             padding: 16px;
 
-            background: #171717;
+            background: #1a1a1a;
 
-            border-bottom: 1px solid var(--border);
+            border-bottom:
+                1px solid var(--border);
         }
 
         .browser {
             height: 100%;
+
             width: 100%;
 
             overflow: hidden;
 
-            border: 1px solid #303030;
-            border-radius: 8px 8px 3px 3px;
+            border:
+                1px solid #303030;
+
+            border-radius:
+                8px 8px 3px 3px;
 
             background: #0a0a0a;
 
-            box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+            box-shadow:
+                0 20px 45px
+                rgba(0,0,0,0.4);
         }
 
         .browser-bar {
             height: 25px;
 
             display: flex;
+
             align-items: center;
 
             gap: 5px;
@@ -513,6 +745,7 @@
 
         .browser-dot {
             width: 6px;
+
             height: 6px;
 
             border-radius: 50%;
@@ -521,22 +754,27 @@
         }
 
         .preview-page {
-            height: calc(100% - 25px);
+            height:
+                calc(100% - 25px);
 
             padding: 24px;
 
             display: flex;
+
             flex-direction: column;
+
             justify-content: center;
         }
 
         .preview-page h4 {
             font-size: 1.3rem;
+
             margin-bottom: 11px;
         }
 
         .preview-line {
             width: 78%;
+
             height: 5px;
 
             background: #333;
@@ -552,13 +790,15 @@
 
         .preview-button {
             width: 74px;
+
             height: 21px;
 
             margin-top: 12px;
 
             border-radius: 4px;
 
-            background: var(--yellow);
+            background:
+                var(--yellow);
         }
 
         .cuts .preview-page {
@@ -611,14 +851,17 @@
             color: var(--yellow);
 
             font-size: 0.7rem;
+
             font-weight: 700;
 
             letter-spacing: 2px;
+
             text-transform: uppercase;
         }
 
         .work-info h3 {
-            margin: 9px 0 10px;
+            margin:
+                9px 0 10px;
 
             font-size: 1.35rem;
         }
@@ -635,6 +878,7 @@
 
         .work-info .button {
             margin-top: 23px;
+
             width: 100%;
         }
 
@@ -644,13 +888,15 @@
         ===================================================== */
 
         #pricing {
-            background: #080808;
+            background:
+                rgba(16,16,16,0.72);
         }
 
         .pricing-grid {
             display: grid;
 
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns:
+                repeat(3, 1fr);
 
             gap: 18px;
 
@@ -661,13 +907,16 @@
             position: relative;
 
             display: flex;
+
             flex-direction: column;
 
             padding: 35px;
 
-            background: #111;
+            background:
+                rgba(24,24,24,0.92);
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
 
             border-radius: 14px;
 
@@ -678,17 +927,20 @@
 
         .pricing-card:hover {
             transform: translateY(-7px);
-            border-color: var(--border-strong);
+
+            border-color:
+                var(--border-strong);
         }
 
         .pricing-card.featured {
-            border-color: rgba(244, 196, 48, 0.5);
+            border-color:
+                rgba(244,196,48,0.5);
 
             background:
                 linear-gradient(
                     145deg,
-                    #17140a,
-                    #111
+                    rgba(38,33,16,0.96),
+                    rgba(20,20,20,0.96)
                 );
         }
 
@@ -696,19 +948,24 @@
             position: absolute;
 
             top: 18px;
+
             right: 18px;
 
             padding: 5px 9px;
 
             border-radius: 20px;
 
-            background: var(--yellow);
+            background:
+                var(--yellow);
+
             color: #080808;
 
             font-size: 0.65rem;
+
             font-weight: 800;
 
             letter-spacing: 1px;
+
             text-transform: uppercase;
         }
 
@@ -716,27 +973,33 @@
             color: var(--yellow);
 
             font-size: 0.75rem;
+
             font-weight: 700;
 
             letter-spacing: 2px;
+
             text-transform: uppercase;
         }
 
         .pricing-card h3 {
-            margin: 14px 0 4px;
+            margin:
+                14px 0 4px;
 
             font-size: 1.6rem;
         }
 
         .price {
             display: flex;
+
             align-items: baseline;
 
-            margin: 18px 0 8px;
+            margin:
+                18px 0 8px;
         }
 
         .price-symbol {
             font-size: 1.1rem;
+
             color: #aaa;
         }
 
@@ -776,7 +1039,9 @@
 
         .pricing-features {
             display: flex;
+
             flex-direction: column;
+
             gap: 13px;
 
             margin-bottom: 30px;
@@ -808,6 +1073,7 @@
 
         .pricing-card .button {
             width: 100%;
+
             margin-top: auto;
         }
 
@@ -827,18 +1093,24 @@
         ===================================================== */
 
         #process {
-            background: #0c0c0c;
+            background:
+                rgba(12,12,12,0.7);
 
-            border-top: 1px solid var(--border);
+            border-top:
+                1px solid var(--border);
         }
 
         .process-grid {
             display: grid;
 
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns:
+                repeat(4, 1fr);
 
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+            border-top:
+                1px solid var(--border);
+
+            border-bottom:
+                1px solid var(--border);
         }
 
         .process-step {
@@ -846,7 +1118,8 @@
 
             padding: 30px;
 
-            border-right: 1px solid var(--border);
+            border-right:
+                1px solid var(--border);
         }
 
         .process-step:last-child {
@@ -857,13 +1130,15 @@
             color: var(--yellow);
 
             font-size: 0.75rem;
+
             font-weight: 700;
 
             letter-spacing: 2px;
         }
 
         .process-step h3 {
-            margin: 55px 0 12px;
+            margin:
+                55px 0 12px;
 
             font-size: 1.2rem;
         }
@@ -882,16 +1157,21 @@
         ===================================================== */
 
         .about {
-            background: #101010;
+            background:
+                rgba(20,20,20,0.76);
 
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+            border-top:
+                1px solid var(--border);
+
+            border-bottom:
+                1px solid var(--border);
         }
 
         .about-grid {
             display: grid;
 
-            grid-template-columns: 0.9fr 1.1fr;
+            grid-template-columns:
+                0.9fr 1.1fr;
 
             gap: 90px;
 
@@ -901,7 +1181,12 @@
         .about-title h2 {
             margin-top: 16px;
 
-            font-size: clamp(3rem, 5vw, 5rem);
+            font-size:
+                clamp(
+                    3rem,
+                    5vw,
+                    5rem
+                );
 
             line-height: 0.95;
 
@@ -930,13 +1215,15 @@
         ===================================================== */
 
         #contact {
-            background: #080808;
+            background:
+                rgba(16,16,16,0.78);
         }
 
         .quote-layout {
             display: grid;
 
-            grid-template-columns: 0.8fr 1.2fr;
+            grid-template-columns:
+                0.8fr 1.2fr;
 
             gap: 75px;
 
@@ -946,7 +1233,12 @@
         .quote-intro h2 {
             margin-top: 18px;
 
-            font-size: clamp(3rem, 5vw, 5rem);
+            font-size:
+                clamp(
+                    3rem,
+                    5vw,
+                    5rem
+                );
 
             line-height: 0.95;
 
@@ -973,7 +1265,9 @@
             margin-top: 35px;
 
             display: flex;
+
             flex-direction: column;
+
             gap: 12px;
         }
 
@@ -990,9 +1284,11 @@
         .quote-form {
             padding: 35px;
 
-            background: #111;
+            background:
+                rgba(24,24,24,0.95);
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
 
             border-radius: 14px;
         }
@@ -1000,7 +1296,8 @@
         .form-row {
             display: grid;
 
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns:
+                1fr 1fr;
 
             gap: 16px;
         }
@@ -1017,6 +1314,7 @@
             color: #bbb;
 
             font-size: 0.78rem;
+
             font-weight: 700;
 
             letter-spacing: 0.5px;
@@ -1029,9 +1327,10 @@
 
             padding: 14px 15px;
 
-            background: #0b0b0b;
+            background: #101010;
 
-            border: 1px solid #292929;
+            border:
+                1px solid #292929;
 
             border-radius: 7px;
 
@@ -1043,23 +1342,21 @@
 
             outline: none;
 
-            transition: border-color 0.2s ease;
+            transition:
+                border-color 0.2s ease;
         }
 
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
-            border-color: rgba(244, 196, 48, 0.65);
+            border-color:
+                rgba(244,196,48,0.65);
         }
 
         .form-group textarea {
             min-height: 125px;
 
             resize: vertical;
-        }
-
-        .form-group select {
-            appearance: none;
         }
 
         .form-submit {
@@ -1084,17 +1381,24 @@
         ===================================================== */
 
         footer {
-            border-top: 1px solid var(--border);
+            border-top:
+                1px solid var(--border);
 
             padding: 35px 0;
+
+            background:
+                rgba(12,12,12,0.9);
         }
 
         .footer-inner {
             width: min(1180px, 84%);
+
             margin: 0 auto;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
         }
 
@@ -1106,6 +1410,7 @@
 
         .footer-links {
             display: flex;
+
             gap: 22px;
         }
 
@@ -1116,7 +1421,8 @@
 
             text-decoration: none;
 
-            transition: color 0.2s ease;
+            transition:
+                color 0.2s ease;
         }
 
         .footer-links a:hover {
@@ -1142,12 +1448,15 @@
 
             .pricing-card {
                 max-width: 600px;
+
                 width: 100%;
+
                 margin: 0 auto;
             }
 
             .process-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
             .process-step:nth-child(2) {
@@ -1155,7 +1464,8 @@
             }
 
             .process-step:nth-child(-n+2) {
-                border-bottom: 1px solid var(--border);
+                border-bottom:
+                    1px solid var(--border);
             }
 
             .about-grid,
@@ -1163,6 +1473,11 @@
                 grid-template-columns: 1fr;
 
                 gap: 50px;
+            }
+
+            .lynx-background {
+                width: 70vw;
+                height: 70vw;
             }
 
         }
@@ -1193,11 +1508,17 @@
             }
 
             .hero-content {
-                padding: 90px 0 100px;
+                padding:
+                    90px 0 100px;
             }
 
             .hero h1 {
-                font-size: clamp(3.3rem, 16vw, 5.5rem);
+                font-size:
+                    clamp(
+                        3.3rem,
+                        16vw,
+                        5.5rem
+                    );
 
                 letter-spacing: -4px;
             }
@@ -1223,7 +1544,12 @@
             }
 
             .section-header h2 {
-                font-size: clamp(2.8rem, 13vw, 4rem);
+                font-size:
+                    clamp(
+                        2.8rem,
+                        13vw,
+                        4rem
+                    );
 
                 letter-spacing: -2.5px;
             }
@@ -1237,7 +1563,8 @@
 
                 border-right: none;
 
-                border-bottom: 1px solid var(--border);
+                border-bottom:
+                    1px solid var(--border);
             }
 
             .process-step:last-child {
@@ -1258,6 +1585,7 @@
 
             .form-row {
                 grid-template-columns: 1fr;
+
                 gap: 0;
             }
 
@@ -1272,6 +1600,13 @@
                 gap: 18px;
 
                 text-align: center;
+            }
+
+            .lynx-background {
+                width: 100vw;
+                height: 100vw;
+
+                opacity: 0.075;
             }
 
         }
@@ -1289,6 +1624,7 @@
 
             .hero-actions {
                 flex-direction: column;
+
                 align-items: stretch;
             }
 
@@ -1298,11 +1634,59 @@
 
         }
 
+
+        /* =====================================================
+           REDUCED MOTION
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            .lynx-background {
+                transition: none;
+            }
+
+            .button,
+            .service-card,
+            .work-card,
+            .pricing-card {
+                transition: none;
+            }
+
+        }
+
     </style>
 </head>
 
 
 <body>
+
+
+    <!-- =====================================================
+         INTERACTIVE LYNX BACKGROUND
+    ===================================================== -->
+
+    <div
+        class="lynx-background"
+        id="lynxBackground"
+        aria-hidden="true"
+    >
+
+        <img
+            src="lynx.png?v=2"
+            alt=""
+        >
+
+    </div>
+
+
+    <div class="background-glow"></div>
+
+    <div class="background-glow-two"></div>
+
 
 
     <!-- =====================================================
@@ -1377,9 +1761,7 @@
     <main>
 
 
-        <!-- =================================================
-             HERO
-        ================================================== -->
+        <!-- HERO -->
 
         <section class="hero">
 
@@ -1456,9 +1838,7 @@
 
 
 
-        <!-- =================================================
-             SERVICES
-        ================================================== -->
+        <!-- SERVICES -->
 
         <section id="services">
 
@@ -1580,9 +1960,7 @@
 
 
 
-        <!-- =================================================
-             WORK
-        ================================================== -->
+        <!-- WORK -->
 
         <section id="work">
 
@@ -1658,11 +2036,9 @@
                                 Barbershop
                             </div>
 
-
                             <h3>
                                 Philly Fresh Cuts
                             </h3>
-
 
                             <p>
 
@@ -1671,7 +2047,6 @@
                                 stronger online presence.
 
                             </p>
-
 
                             <a
                                 href="barbershop.html"
@@ -1726,11 +2101,9 @@
                                 Restaurant
                             </div>
 
-
                             <h3>
                                 King's Grill
                             </h3>
-
 
                             <p>
 
@@ -1739,7 +2112,6 @@
                                 and bring in more customers.
 
                             </p>
-
 
                             <a
                                 href="#contact"
@@ -1794,11 +2166,9 @@
                                 Auto Detailing
                             </div>
 
-
                             <h3>
                                 Prime Auto Detail
                             </h3>
-
 
                             <p>
 
@@ -1806,7 +2176,6 @@
                                 for a mobile car-detailing business.
 
                             </p>
-
 
                             <a
                                 href="#contact"
@@ -1828,9 +2197,7 @@
 
 
 
-        <!-- =================================================
-             PRICING
-        ================================================== -->
+        <!-- PRICING -->
 
         <section id="pricing">
 
@@ -1867,14 +2234,11 @@
                 <div class="pricing-grid">
 
 
-                    <!-- STARTER -->
-
                     <article class="pricing-card">
 
                         <div class="pricing-name">
                             Starter
                         </div>
-
 
                         <h3>
                             Launch
@@ -1945,8 +2309,6 @@
 
 
 
-                    <!-- BUSINESS -->
-
                     <article class="pricing-card featured">
 
                         <div class="popular">
@@ -1957,7 +2319,6 @@
                         <div class="pricing-name">
                             Business
                         </div>
-
 
                         <h3>
                             Grow
@@ -2032,14 +2393,11 @@
 
 
 
-                    <!-- PREMIUM -->
-
                     <article class="pricing-card">
 
                         <div class="pricing-name">
                             Premium
                         </div>
-
 
                         <h3>
                             Elevate
@@ -2129,9 +2487,7 @@
 
 
 
-        <!-- =================================================
-             PROCESS
-        ================================================== -->
+        <!-- PROCESS -->
 
         <section id="process">
 
@@ -2261,9 +2617,7 @@
 
 
 
-        <!-- =================================================
-             ABOUT
-        ================================================== -->
+        <!-- ABOUT -->
 
         <section
             id="about"
@@ -2321,9 +2675,7 @@
 
 
 
-        <!-- =================================================
-             REQUEST A QUOTE
-        ================================================== -->
+        <!-- REQUEST A QUOTE -->
 
         <section id="contact">
 
@@ -2576,9 +2928,7 @@
 
 
 
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+    <!-- FOOTER -->
 
     <footer>
 
@@ -2615,6 +2965,119 @@
         </div>
 
     </footer>
+
+
+
+    <!-- =====================================================
+         LYNX SCROLL INTERACTION
+    ===================================================== -->
+
+    <script>
+
+        const lynxBackground =
+            document.getElementById("lynxBackground");
+
+        let ticking = false;
+
+
+        function updateLynx() {
+
+            const scrollY =
+                window.scrollY || window.pageYOffset;
+
+            const maxScroll =
+                Math.max(
+                    document.documentElement.scrollHeight
+                    - window.innerHeight,
+                    1
+                );
+
+            const progress =
+                Math.min(
+                    scrollY / maxScroll,
+                    1
+                );
+
+
+            /*
+             * The farther down the page,
+             * the more the Lynx fades and blurs.
+             */
+
+            const opacity =
+                Math.max(
+                    0.018,
+                    0.105 - (progress * 0.082)
+                );
+
+
+            const blur =
+                progress * 13;
+
+
+            /*
+             * Subtle movement creates the
+             * interactive feeling without
+             * making the background distracting.
+             */
+
+            const movement =
+                scrollY * 0.055;
+
+
+            const scale =
+                1 + (progress * 0.09);
+
+
+            lynxBackground.style.opacity =
+                opacity;
+
+
+            lynxBackground.style.filter =
+                `blur(${blur}px) grayscale(100%)`;
+
+
+            lynxBackground.style.transform =
+                `translate3d(-50%, calc(-50% + ${movement}px), 0) scale(${scale})`;
+
+
+            ticking = false;
+
+        }
+
+
+        function requestLynxUpdate() {
+
+            if (!ticking) {
+
+                window.requestAnimationFrame(
+                    updateLynx
+                );
+
+                ticking = true;
+
+            }
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            requestLynxUpdate,
+            { passive: true }
+        );
+
+
+        window.addEventListener(
+            "resize",
+            requestLynxUpdate,
+            { passive: true }
+        );
+
+
+        updateLynx();
+
+    </script>
 
 
 </body>
