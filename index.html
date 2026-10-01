@@ -1,34 +1,219 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Tr4pMaj Web Design</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tr4pMaj Web Design | Philly Websites</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #111827;
+        }
+
+        nav h2 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: #cbd5e1;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            width: 280px;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+        }
+
+        footer {
+            background: #111827;
+            text-align: center;
+            padding: 30px;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            nav {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Tr4pMaj Web Design</h1>
+    <nav>
+        <h2>Tr4pMaj</h2>
 
-    <h2>Modern Websites for Small Businesses</h2>
+        <div>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+        </div>
+    </nav>
 
-    <p>
-        I create clean, modern websites that help small businesses
-        look professional online and reach more customers.
-    </p>
+    <div class="hero">
 
-    <button>Get a Website</button>
+        <h1>Websites That Help<br><span>Businesses Grow.</span></h1>
 
-    <h2>My Services</h2>
+        <p>
+            I build modern, mobile-friendly websites for
+            small businesses and entrepreneurs in Philadelphia.
+        </p>
 
-    <p>Website Design</p>
-    <p>Mobile-Friendly Websites</p>
-    <p>Basic SEO Setup</p>
+        <a class="button" href="#contact">Get Your Website</a>
 
-    <h2>About Me</h2>
+    </div>
 
-    <p>
-        I'm a web designer from Philadelphia building websites
-        for small businesses and entrepreneurs.
-    </p>
+    <section id="services">
+
+        <h2>What I Do</h2>
+
+        <div class="services">
+
+            <div class="card">
+                <h3>Website Design</h3>
+                <p>
+                    Clean, modern websites designed
+                    specifically for your business.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Mobile Design</h3>
+                <p>
+                    Websites that look great on phones,
+                    tablets, and computers.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>SEO Setup</h3>
+                <p>
+                    Basic search-engine setup to help
+                    customers find your business online.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            I'm a Philadelphia-based web designer
+            helping small businesses build a stronger
+            presence online.
+        </p>
+
+    </section>
+
+    <section id="contact">
+
+        <h2>Ready to Build?</h2>
+
+        <p>
+            Let's create a website for your business.
+        </p>
+
+        <br>
+
+        <a class="button" href="mailto:youremail@example.com">
+            Contact Me
+        </a>
+
+    </section>
+
+    <footer>
+        © 2026 Tr4pMaj Web Design
+    </footer>
 
 </body>
 </html>
