@@ -158,34 +158,39 @@
            CARDS
         ========================= */
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-        }
+}
 
-        .card {
-            background: #141414;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 14px;
-            transition: 0.3s;
-        }
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #F4C430;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.3s ease;
+}
 
-        .card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(244, 196, 48, 0.6);
-        }
+.card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(244, 196, 48, 0.35);
+}
 
-        .card h3 {
-            margin-bottom: 12px;
-            font-size: 1.3rem;
-        }
+.card:hover::before {
+    transform: scaleX(1);
+}
 
-        .card p {
-            color: #AFAFAF;
-        }
+.card h3 {
+    margin-bottom: 14px;
+    font-size: 1.35rem;
+}
 
+.card p {
+    color: #AFAFAF;
+    line-height: 1.7;
+}
 
         /* =========================
            ABOUT
@@ -340,40 +345,40 @@
 
             <div class="services">
 
-                <div class="card">
+              <div class="card">
 
-                    <h3>Website Design</h3>
+    <h3>01 — Website Design</h3>
 
-                    <p>
-                        Clean, modern websites built around
-                        your business and your customers.
-                    </p>
+    <p>
+        Clean, modern websites designed around your
+        business, your brand, and the customers you want to reach.
+    </p>
 
-                </div>
-
-
-                <div class="card">
-
-                    <h3>Mobile Design</h3>
-
-                    <p>
-                        Responsive websites that look great
-                        on phones, tablets, and computers.
-                    </p>
-
-                </div>
+</div>
 
 
-                <div class="card">
+<div class="card">
 
-                    <h3>SEO Setup</h3>
+    <h3>02 — Mobile Design</h3>
 
-                    <p>
-                        Essential search engine setup to help
-                        customers discover your business online.
-                    </p>
+    <p>
+        Responsive experiences built to look sharp
+        and work smoothly across phones, tablets, and desktops.
+    </p>
 
-                </div>
+</div>
+
+
+<div class="card">
+
+    <h3>03 — SEO Setup</h3>
+
+    <p>
+        Essential search optimization that helps your
+        business get discovered and makes your website easier to find.
+    </p>
+
+</div>
 
             </div>
 
