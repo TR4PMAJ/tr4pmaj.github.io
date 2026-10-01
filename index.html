@@ -255,36 +255,57 @@
 
     <!-- NAVIGATION -->
 
-    <nav>
-
-        .logo {
+    <style>
+    /* ALL your CSS goes here */
+    
+    .logo {
     display: flex;
     flex-direction: column;
     line-height: 1;
-    font-size: 1.45rem;
-    font-weight: 800;
-    letter-spacing: 2px;
+    text-decoration: none;
 }
 
-.logo span {
+.logo-main {
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #F3EDE5;
+}
+
+.logo-main span {
     color: #C45A16;
 }
 
-.logo small {
-    margin-top: 4px;
-    color: #B9A28E;
+.logo-sub {
+    margin-top: 5px;
     font-size: 0.48rem;
     font-weight: 600;
     letter-spacing: 3px;
+    color: #B9A28E;
 }
+</style>
 
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Work</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
+</head>
 
-    </nav>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">
+        <div class="logo-main">
+            WESTMARK<span>.</span>
+        </div>
+        <div class="logo-sub">
+            WEB CO.
+        </div>
+    </div>
+
+    <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Work</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+</nav>
 
 
     <!-- HERO -->
