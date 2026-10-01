@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Westmark Web Co. | Websites That Grow Businesses</title>
+    <title>Lynx & Co. Web Studio | Websites That Stand Out</title>
 
     <style>
 
@@ -21,34 +21,37 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #1C1410;
-            color: #F5EBDD;
+            background: #0A0A0A;
+            color: #F5F5F5;
             line-height: 1.6;
         }
 
-        /* NAVIGATION */
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 22px 8%;
-            border-bottom: 1px solid rgba(245, 235, 221, 0.08);
+            padding: 18px 8%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             position: sticky;
             top: 0;
-            background: rgba(28, 20, 16, 0.92);
+            background: rgba(10, 10, 10, 0.94);
             backdrop-filter: blur(10px);
             z-index: 1000;
         }
 
         .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
         }
 
-        .logo span {
-            color: #C45A16;
+        .logo img {
+            width: 130px;
+            height: auto;
+            display: block;
         }
 
         nav ul {
@@ -58,17 +61,20 @@
         }
 
         nav a {
-            color: #B9A28E;
+            color: #BDBDBD;
             text-decoration: none;
             font-size: 0.95rem;
             transition: 0.3s;
         }
 
         nav a:hover {
-            color: #E0782D;
+            color: #F4C430;
         }
 
-        /* HERO */
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             min-height: 85vh;
@@ -81,10 +87,10 @@
         }
 
         .hero-label {
-            color: #E0782D;
+            color: #F4C430;
             font-size: 0.9rem;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 20px;
         }
@@ -98,20 +104,20 @@
         }
 
         .hero h1 span {
-            color: #C45A16;
+            color: #F4C430;
         }
 
         .hero p {
             max-width: 650px;
-            color: #B9A28E;
+            color: #AFAFAF;
             font-size: 1.15rem;
             margin-bottom: 35px;
         }
 
         .button {
             display: inline-block;
-            background: #C45A16;
-            color: #F5EBDD;
+            background: #F4C430;
+            color: #0A0A0A;
             padding: 14px 25px;
             border-radius: 8px;
             text-decoration: none;
@@ -121,11 +127,14 @@
         }
 
         .button:hover {
-            background: #E0782D;
+            background: #FFD84D;
             transform: translateY(-2px);
         }
 
-        /* SECTIONS */
+
+        /* =========================
+           SECTIONS
+        ========================= */
 
         section {
             padding: 100px 8%;
@@ -139,12 +148,15 @@
         }
 
         .section-intro {
-            color: #B9A28E;
+            color: #AFAFAF;
             max-width: 600px;
             margin-bottom: 45px;
         }
 
-        /* CARDS */
+
+        /* =========================
+           CARDS
+        ========================= */
 
         .services {
             display: grid;
@@ -153,16 +165,16 @@
         }
 
         .card {
-            background: #3A2418;
+            background: #141414;
             padding: 30px;
-            border: 1px solid rgba(245, 235, 221, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 14px;
             transition: 0.3s;
         }
 
         .card:hover {
             transform: translateY(-6px);
-            border-color: rgba(224, 120, 45, 0.5);
+            border-color: rgba(244, 196, 48, 0.6);
         }
 
         .card h3 {
@@ -171,13 +183,16 @@
         }
 
         .card p {
-            color: #B9A28E;
+            color: #AFAFAF;
         }
 
-        /* ABOUT */
+
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about {
-            background: #241914;
+            background: #101010;
             max-width: none;
         }
 
@@ -187,39 +202,52 @@
         }
 
         .about p {
-            color: #B9A28E;
+            color: #AFAFAF;
             max-width: 700px;
             font-size: 1.1rem;
         }
 
-        /* CONTACT */
+
+        /* =========================
+           CONTACT
+        ========================= */
 
         .contact {
             text-align: center;
         }
 
         .contact p {
-            color: #B9A28E;
+            color: #AFAFAF;
             margin: 15px auto 30px;
             max-width: 550px;
         }
 
-        /* FOOTER */
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             text-align: center;
             padding: 30px;
-            border-top: 1px solid rgba(245, 235, 221, 0.08);
-            color: #8F7A69;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #777;
             font-size: 0.9rem;
         }
 
-        /* MOBILE */
+
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 800px) {
 
             nav {
-                padding: 18px 6%;
+                padding: 14px 6%;
+            }
+
+            .logo img {
+                width: 115px;
             }
 
             nav ul {
@@ -251,41 +279,24 @@
     </style>
 </head>
 
+
 <body>
 
     <!-- NAVIGATION -->
 
-    <style>
-    /* ALL your CSS goes here */
+    <nav>
 
-    .logo {
-        display: flex;
-        align-items: center;
-    }
+        <div class="logo">
+            <img src="lynx.png" alt="Lynx & Co. Web Studio">
+        </div>
 
-    .logo img {
-        width: 130px;
-        height: auto;
-        display: block;
-    }
-    </style>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Work</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
 
-</head>
-
-<body>
-
-<!-- NAVIGATION -->
-<nav>
-    <div class="logo">
-        <img src="lynx.png" alt="Lynx & Co. Web Studio">
-    </div>
-    
-    <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Work</a></li>
-        <li><a href="#about">About</a></li>
-    </ul>
-</nav>
+    </nav>
 
 
     <!-- HERO -->
@@ -295,7 +306,7 @@
         <div class="hero">
 
             <div class="hero-label">
-                Westmark Web Co.
+                Lynx & Co. Web Studio
             </div>
 
             <h1>
@@ -330,27 +341,38 @@
             <div class="services">
 
                 <div class="card">
+
                     <h3>Website Design</h3>
+
                     <p>
                         Clean, modern websites built around
                         your business and your customers.
                     </p>
+
                 </div>
 
+
                 <div class="card">
+
                     <h3>Mobile Design</h3>
+
                     <p>
                         Responsive websites that look great
                         on phones, tablets, and computers.
                     </p>
+
                 </div>
 
+
                 <div class="card">
+
                     <h3>SEO Setup</h3>
+
                     <p>
                         Essential search engine setup to help
                         customers discover your business online.
                     </p>
+
                 </div>
 
             </div>
@@ -365,7 +387,7 @@
             <h2>Selected Work</h2>
 
             <p class="section-intro">
-                Explore website concepts created by Westmark.
+                Explore website concepts created by Lynx & Co.
             </p>
 
             <div class="services">
@@ -437,7 +459,7 @@
                 <h2>Built With Purpose.</h2>
 
                 <p>
-                    Westmark Web Co. creates modern websites
+                    Lynx & Co. Web Studio creates modern websites
                     for businesses that want to make a stronger
                     first impression online.
                 </p>
@@ -459,7 +481,7 @@
             </p>
 
             <a class="button" href="mailto:majperry2025@gmail.com">
-                Contact Westmark
+                Contact Lynx & Co.
             </a>
 
         </section>
@@ -471,7 +493,7 @@
 
     <footer>
 
-        © 2026 Westmark Web Co. — All rights reserved.
+        © 2026 Lynx & Co. Web Studio — All rights reserved.
 
     </footer>
 
