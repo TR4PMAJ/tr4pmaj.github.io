@@ -1,258 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tr4pMaj Web Design | Philly Websites</title>
+    <title>Westmark Web Co. | Websites That Grow Businesses</title>
 
     <style>
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #1C1410;
+            color: #F5EBDD;
             line-height: 1.6;
         }
+
+        /* NAVIGATION */
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background: #111827;
+            padding: 22px 8%;
+            border-bottom: 1px solid rgba(245, 235, 221, 0.08);
+            position: sticky;
+            top: 0;
+            background: rgba(28, 20, 16, 0.92);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
         }
 
-        nav h2 {
-            color: #38bdf8;
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #C45A16;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
         }
 
         nav a {
-            color: white;
+            color: #B9A28E;
             text-decoration: none;
-            margin-left: 20px;
+            font-size: 0.95rem;
+            transition: 0.3s;
         }
 
+        nav a:hover {
+            color: #E0782D;
+        }
+
+        /* HERO */
+
         .hero {
-            min-height: 80vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
+            padding: 80px 8%;
+            max-width: 1200px;
+            margin: auto;
         }
 
-        .hero h1 {
-            font-size: 50px;
+        .hero-label {
+            color: #E0782D;
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 20px;
         }
 
-        .hero span {
-            color: #38bdf8;
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            line-height: 0.95;
+            max-width: 950px;
+            margin-bottom: 30px;
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+            color: #C45A16;
         }
 
         .hero p {
-            max-width: 600px;
-            color: #cbd5e1;
-            font-size: 18px;
-            margin-bottom: 30px;
+            max-width: 650px;
+            color: #B9A28E;
+            font-size: 1.15rem;
+            margin-bottom: 35px;
         }
 
         .button {
-            background: #38bdf8;
-            color: #0f172a;
+            display: inline-block;
+            background: #C45A16;
+            color: #F5EBDD;
             padding: 14px 25px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
+            width: fit-content;
         }
 
+        .button:hover {
+            background: #E0782D;
+            transform: translateY(-2px);
+        }
+
+        /* SECTIONS */
+
         section {
-            padding: 80px 8%;
-            text-align: center;
+            padding: 100px 8%;
+            max-width: 1200px;
+            margin: auto;
         }
 
         section h2 {
-            font-size: 35px;
-            margin-bottom: 40px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
+        .section-intro {
+            color: #B9A28E;
+            max-width: 600px;
+            margin-bottom: 45px;
+        }
+
+        /* CARDS */
+
         .services {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
         }
 
         .card {
-            background: #1e293b;
+            background: #3A2418;
             padding: 30px;
-            border-radius: 12px;
-            width: 280px;
+            border: 1px solid rgba(245, 235, 221, 0.08);
+            border-radius: 14px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(224, 120, 45, 0.5);
         }
 
         .card h3 {
-            color: #38bdf8;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
         }
 
         .card p {
-            color: #cbd5e1;
+            color: #B9A28E;
         }
+
+        /* ABOUT */
+
+        .about {
+            background: #241914;
+            max-width: none;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about p {
+            color: #B9A28E;
+            max-width: 700px;
+            font-size: 1.1rem;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #B9A28E;
+            margin: 15px auto 30px;
+            max-width: 550px;
+        }
+
+        /* FOOTER */
 
         footer {
-            background: #111827;
             text-align: center;
             padding: 30px;
-            color: #94a3b8;
+            border-top: 1px solid rgba(245, 235, 221, 0.08);
+            color: #8F7A69;
+            font-size: 0.9rem;
         }
 
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 38px;
-            }
+        /* MOBILE */
+
+        @media (max-width: 800px) {
 
             nav {
-                padding: 20px;
+                padding: 18px 6%;
             }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                padding: 70px 6%;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            section {
+                padding: 75px 6%;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
         }
+
     </style>
 </head>
 
 <body>
 
-    <nav>
-        <h2>Tr4pMaj</h2>
+    <!-- NAVIGATION -->
 
-        <div>
-            <a href="#services">Services</a>
-<a href="#portfolio">Work</a>
-<a href="#about">About</a>
+    <nav>
+
+        <div class="logo">
+            WESTMARK<span>.</span>
         </div>
+
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Work</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
     </nav>
 
-    <div class="hero">
 
-        <h1>Websites That Help<br><span>Businesses Grow.</span></h1>
+    <!-- HERO -->
 
-        <p>
-            I build modern, mobile-friendly websites for
-            small businesses and entrepreneurs in Philadelphia.
-        </p>
+    <main>
 
-        <a class="button" href="#contact">Get Your Website</a>
+        <div class="hero">
 
-    </div>
-
-    <section id="services">
-
-        <h2>What I Do</h2>
-
-        <div class="services">
-
-            <div class="card">
-                <h3>Website Design</h3>
-                <p>
-                    Clean, modern websites designed
-                    specifically for your business.
-                </p>
+            <div class="hero-label">
+                Westmark Web Co.
             </div>
 
-            <div class="card">
-                <h3>Mobile Design</h3>
-                <p>
-                    Websites that look great on phones,
-                    tablets, and computers.
-                </p>
+            <h1>
+                Websites built to
+                <span>stand out.</span>
+            </h1>
+
+            <p>
+                Modern, high-quality websites designed to help
+                businesses look professional, attract customers,
+                and grow online.
+            </p>
+
+            <a class="button" href="#contact">
+                Start a Project
+            </a>
+
+        </div>
+
+
+        <!-- SERVICES -->
+
+        <section id="services">
+
+            <h2>What We Do</h2>
+
+            <p class="section-intro">
+                Everything a growing business needs to build
+                a stronger presence online.
+            </p>
+
+            <div class="services">
+
+                <div class="card">
+                    <h3>Website Design</h3>
+                    <p>
+                        Clean, modern websites built around
+                        your business and your customers.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Mobile Design</h3>
+                    <p>
+                        Responsive websites that look great
+                        on phones, tablets, and computers.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>SEO Setup</h3>
+                    <p>
+                        Essential search engine setup to help
+                        customers discover your business online.
+                    </p>
+                </div>
+
             </div>
 
-            <div class="card">
-                <h3>SEO Setup</h3>
-                <p>
-                    Basic search-engine setup to help
-                    customers find your business online.
-                </p>
+        </section>
+
+
+        <!-- PORTFOLIO -->
+
+        <section id="portfolio">
+
+            <h2>Selected Work</h2>
+
+            <p class="section-intro">
+                Explore website concepts created by Westmark.
+            </p>
+
+            <div class="services">
+
+                <div class="card">
+
+                    <h3>Philly Fresh Cuts</h3>
+
+                    <p>
+                        A modern website concept created
+                        for a barbershop.
+                    </p>
+
+                    <br>
+
+                    <a class="button" href="barbershop.html">
+                        View Demo
+                    </a>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>King's Grill</h3>
+
+                    <p>
+                        A restaurant website concept designed
+                        to showcase a menu and attract customers.
+                    </p>
+
+                    <br>
+
+                    <a class="button" href="#">
+                        View Demo
+                    </a>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Prime Auto Detail</h3>
+
+                    <p>
+                        A professional website concept for
+                        a mobile car-detailing business.
+                    </p>
+
+                    <br>
+
+                    <a class="button" href="#">
+                        View Demo
+                    </a>
+
+                </div>
+
             </div>
 
-        </div>
+        </section>
 
-    </section>
-<section id="portfolio">
 
-    <h2>My Work</h2>
+        <!-- ABOUT -->
 
-    <div class="services">
+        <section id="about" class="about">
 
-        <div class="card">
-            <h3>Philly Fresh Cuts</h3>
+            <div class="about-content">
+
+                <h2>Built With Purpose.</h2>
+
+                <p>
+                    Westmark Web Co. creates modern websites
+                    for businesses that want to make a stronger
+                    first impression online.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section id="contact" class="contact">
+
+            <h2>Ready to Build?</h2>
+
             <p>
-                A modern website concept created
-                for a Philadelphia barbershop.
+                Let's create a website that makes your business
+                impossible to overlook.
             </p>
-            <br>
-            <a class="button" href="barbershop.html">View Demo</a>
-        </div>
 
-        <div class="card">
-            <h3>King's Grill</h3>
-            <p>
-                A restaurant website concept designed
-                to showcase a menu and attract customers.
-            </p>
-            <br>
-            <a class="button" href="#">View Demo</a>
-        </div>
+            <a class="button" href="mailto:majperry2025@gmail.com">
+                Contact Westmark
+            </a>
 
-        <div class="card">
-            <h3>Prime Auto Detail</h3>
-            <p>
-                A professional website concept for
-                a mobile car-detailing business.
-            </p>
-            <br>
-            <a class="button" href="#">View Demo</a>
-        </div>
+        </section>
 
-    </div>
+    </main>
 
-</section>
-    <section id="about">
 
-        <h2>About Me</h2>
-
-        <p>
-            I'm a Philadelphia-based web designer
-            helping small businesses build a stronger
-            presence online.
-        </p>
-
-    </section>
-
-    <section id="contact">
-
-        <h2>Ready to Build?</h2>
-
-        <p>
-            Let's create a website for your business.
-        </p>
-
-        <br>
-
-        <a class="button" href="mailto:majperry2025@gmail.com">
-            Contact Me
-        </a>
-
-    </section>
+    <!-- FOOTER -->
 
     <footer>
-        © 2026 Tr4pMaj Web Design
+
+        © 2026 Westmark Web Co. — All rights reserved.
+
     </footer>
 
 </body>
+
 </html>
