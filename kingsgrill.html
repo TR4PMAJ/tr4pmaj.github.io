@@ -1,0 +1,2795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kings Grill | Philadelphia</title>
+
+<meta name="description" content="Kings Grill — a fictional Philadelphia grill website demo created by Lynx & Co. Web Studio.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --red:#b72c24;
+    --red-dark:#8d201a;
+    --gold:#d69a32;
+    --black:#101010;
+    --charcoal:#181818;
+    --cream:#f5f0e8;
+    --white:#ffffff;
+    --gray:#77716b;
+    --border:#ddd5ca;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--cream);
+    color:var(--black);
+    line-height:1.6;
+}
+
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+
+/* ================================
+   ANNOUNCEMENT
+================================ */
+
+.announcement{
+    background:var(--red);
+    color:white;
+    text-align:center;
+    padding:9px 15px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+.announcement span{
+    color:#ffd36b;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(16,16,16,.97);
+    border-bottom:1px solid #333;
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    padding:16px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    text-decoration:none;
+    color:white;
+}
+
+.logo-main{
+    font-family:Georgia,serif;
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.logo-main span{
+    color:var(--gold);
+}
+
+.logo-sub{
+    display:block;
+    color:#aaa;
+    font-size:8px;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    margin-top:-3px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links button{
+    border:0;
+    background:none;
+    color:#ddd;
+    font-size:13px;
+    font-weight:800;
+}
+
+.nav-links button:hover{
+    color:var(--gold);
+}
+
+.order-button{
+    background:var(--red)!important;
+    color:white!important;
+    padding:11px 18px;
+    border-radius:3px;
+}
+
+.mobile-menu{
+    display:none;
+    border:0;
+    background:none;
+    color:white;
+    font-size:25px;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero{
+    min-height:720px;
+    display:flex;
+    align-items:center;
+    color:white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,8,8,.94) 0%,
+            rgba(8,8,8,.83) 43%,
+            rgba(8,8,8,.25) 100%
+        ),
+
+        url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1900&q=90")
+        center/cover;
+}
+
+.hero-inner{
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+    padding:80px 25px;
+}
+
+.hero-content{
+    max-width:670px;
+}
+
+.hero-kicker{
+    color:var(--gold);
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:clamp(55px,8vw,92px);
+    line-height:.92;
+    letter-spacing:-4px;
+    margin-bottom:28px;
+}
+
+.hero h1 span{
+    color:#d9473d;
+}
+
+.hero p{
+    color:#ddd;
+    font-size:18px;
+    max-width:580px;
+    margin-bottom:34px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:0;
+    padding:15px 24px;
+    font-size:13px;
+    font-weight:900;
+    border-radius:3px;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn-red{
+    background:var(--red);
+    color:white;
+}
+
+.btn-white{
+    background:white;
+    color:var(--black);
+}
+
+
+/* ================================
+   INFO STRIP
+================================ */
+
+.info-strip{
+    background:var(--gold);
+    color:#17110a;
+}
+
+.info-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:20px 25px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+}
+
+.info-item{
+    padding:3px 25px;
+    border-right:1px solid rgba(0,0,0,.18);
+}
+
+.info-item:first-child{
+    padding-left:0;
+}
+
+.info-item:last-child{
+    border-right:0;
+}
+
+.info-item strong{
+    display:block;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+.info-item span{
+    font-size:13px;
+}
+
+
+/* ================================
+   GENERAL
+================================ */
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:95px 25px;
+}
+
+.section-label{
+    color:var(--red);
+    font-size:11px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    margin-bottom:10px;
+}
+
+.section-heading{
+    max-width:690px;
+    margin-bottom:45px;
+}
+
+.section-heading h2{
+    color:#241a15;
+    font-family:Georgia,serif;
+    font-size:48px;
+    line-height:1.02;
+    letter-spacing:-1.5px;
+}
+
+.section-heading p{
+    color:var(--gray);
+    margin-top:15px;
+}
+
+
+/* ================================
+   GRILL FEATURE
+================================ */
+
+.feature-section{
+    background:white;
+}
+
+.grill-grid{
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:20px;
+}
+
+.food-photo{
+    position:relative;
+    min-height:430px;
+    overflow:hidden;
+    background-position:center;
+    background-size:cover;
+    display:flex;
+    align-items:flex-end;
+}
+
+.food-photo.main{
+    background-image:
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.82),
+            transparent 65%
+        ),
+        url("https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1300&q=90");
+}
+
+.food-photo.steak{
+    background-image:
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.8),
+            transparent 65%
+        ),
+        url("https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=1000&q=90");
+}
+
+.food-photo.chicken{
+    background-image:
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.8),
+            transparent 65%
+        ),
+        url("https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=1000&q=90");
+}
+
+.grill-side{
+    display:grid;
+    grid-template-rows:1fr 1fr;
+    gap:20px;
+}
+
+.grill-side .food-photo{
+    min-height:205px;
+}
+
+.food-caption{
+    padding:28px;
+    color:white;
+}
+
+.food-caption h3{
+    font-family:Georgia,serif;
+    font-size:30px;
+}
+
+.food-caption p{
+    color:#eee;
+    font-size:13px;
+}
+
+.food-price{
+    display:inline-block;
+    margin-top:7px;
+    color:#f4bd51;
+    font-weight:900;
+}
+
+
+/* ================================
+   MENU
+================================ */
+
+.menu-section{
+    background:var(--cream);
+}
+
+.menu-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:30px;
+}
+
+.menu-tab{
+    border:1px solid var(--border);
+    background:white;
+    color:#333;
+    padding:10px 17px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:900;
+}
+
+.menu-tab.active,
+.menu-tab:hover{
+    background:var(--red);
+    color:white;
+    border-color:var(--red);
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.menu-item{
+    background:white;
+    border:1px solid var(--border);
+    padding:24px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    transition:.2s;
+}
+
+.menu-item:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 28px rgba(0,0,0,.06);
+}
+
+.menu-item.hidden{
+    display:none;
+}
+
+.menu-info h3{
+    color:#2b201a;
+    font-family:Georgia,serif;
+    font-size:21px;
+}
+
+.menu-info p{
+    color:var(--gray);
+    font-size:13px;
+    margin-top:5px;
+}
+
+.menu-price{
+    color:var(--red);
+    font-weight:900;
+    white-space:nowrap;
+}
+
+.add-btn{
+    margin-top:11px;
+    border:1px solid var(--red);
+    background:white;
+    color:var(--red);
+    padding:7px 12px;
+    font-size:11px;
+    font-weight:900;
+}
+
+.add-btn:hover{
+    background:var(--red);
+    color:white;
+}
+
+
+/* ================================
+   STORY
+================================ */
+
+.story-section{
+    background:white;
+}
+
+.story-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.story-image{
+    min-height:540px;
+    background:
+        linear-gradient(
+            rgba(0,0,0,.12),
+            rgba(0,0,0,.12)
+        ),
+        url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=90")
+        center/cover;
+}
+
+.story-copy h2{
+    font-family:Georgia,serif;
+    color:#281c15;
+    font-size:47px;
+    line-height:1.03;
+    margin-bottom:22px;
+}
+
+.story-copy p{
+    color:var(--gray);
+    margin-bottom:18px;
+}
+
+.story-quote{
+    border-left:4px solid var(--red);
+    padding-left:20px;
+    margin-top:28px;
+    font-family:Georgia,serif;
+    font-size:18px;
+    color:#2c211b;
+}
+
+
+/* ================================
+   REVIEWS
+================================ */
+
+.reviews-section{
+    background:var(--charcoal);
+}
+
+.reviews-section .section-heading h2{
+    color:white;
+}
+
+.reviews-section .section-heading p{
+    color:#aaa;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.review{
+    background:white;
+    padding:29px;
+}
+
+.stars{
+    color:var(--gold);
+    letter-spacing:2px;
+    margin-bottom:14px;
+}
+
+.review p{
+    font-family:Georgia,serif;
+    font-size:16px;
+    line-height:1.55;
+    color:#39322d;
+    margin-bottom:22px;
+}
+
+.review-name{
+    font-size:13px;
+    font-weight:900;
+    color:#231914;
+}
+
+.review-meta{
+    color:#888;
+    font-size:11px;
+}
+
+
+/* ================================
+   ORDER
+================================ */
+
+.order-section{
+    background:#ebe4da;
+}
+
+.order-layout{
+    display:grid;
+    grid-template-columns:1fr 390px;
+    gap:25px;
+    align-items:start;
+}
+
+.order-panel{
+    background:white;
+    border:1px solid var(--border);
+    padding:30px;
+}
+
+.order-panel h3{
+    font-family:Georgia,serif;
+    color:#281c15;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.order-items{
+    display:flex;
+    flex-direction:column;
+    gap:13px;
+}
+
+.empty-cart{
+    padding:25px 0;
+    color:#888;
+    font-size:14px;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    border-bottom:1px solid #eee;
+    padding-bottom:14px;
+}
+
+.cart-name{
+    font-weight:900;
+    font-size:14px;
+}
+
+.cart-price{
+    color:var(--red);
+    font-weight:900;
+}
+
+.quantity{
+    display:flex;
+    gap:7px;
+    align-items:center;
+    margin-top:6px;
+}
+
+.quantity button{
+    width:24px;
+    height:24px;
+    border:1px solid var(--border);
+    background:white;
+}
+
+.quantity span{
+    font-size:12px;
+    font-weight:900;
+}
+
+.totals{
+    border-top:1px solid var(--border);
+    margin-top:20px;
+    padding-top:17px;
+}
+
+.total-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.total-row.final{
+    margin-top:12px;
+    font-size:20px;
+    font-weight:900;
+    color:#251a14;
+}
+
+.checkout{
+    width:100%;
+    margin-top:18px;
+    padding:16px;
+    background:var(--red);
+    color:white;
+    border:0;
+    font-weight:900;
+}
+
+.checkout:hover{
+    background:var(--red-dark);
+}
+
+
+/* ================================
+   CHECKOUT FORM
+================================ */
+
+.checkout-form{
+    background:white;
+    border:1px solid var(--border);
+    padding:30px;
+}
+
+.checkout-form h3{
+    font-family:Georgia,serif;
+    color:#281c15;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.form-group{
+    margin-bottom:16px;
+}
+
+.form-group label{
+    display:block;
+    font-size:10px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:13px;
+    border:1px solid #ccc;
+    background:white;
+    font-size:14px;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    outline:2px solid rgba(183,44,36,.15);
+    border-color:var(--red);
+}
+
+
+/* ================================
+   CONFIRMATION
+================================ */
+
+.confirmation{
+    display:none;
+    text-align:center;
+    padding:45px 20px;
+}
+
+.confirmation.show{
+    display:block;
+}
+
+.confirm-icon{
+    width:65px;
+    height:65px;
+    background:#e8f5e9;
+    color:#23763a;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    margin:0 auto 16px;
+    font-size:28px;
+}
+
+.confirmation h3{
+    color:#281c15;
+    font-family:Georgia,serif;
+    font-size:30px;
+}
+
+.confirmation p{
+    color:var(--gray);
+    max-width:500px;
+    margin:10px auto 20px;
+}
+
+
+/* ================================
+   CONTACT
+================================ */
+
+.contact-section{
+    background:white;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.contact-card{
+    border:1px solid var(--border);
+    padding:30px;
+}
+
+.contact-card h3{
+    font-family:Georgia,serif;
+    color:#281c15;
+    font-size:28px;
+    margin-bottom:22px;
+}
+
+.contact-line{
+    margin-bottom:17px;
+}
+
+.contact-line strong{
+    display:block;
+    color:#281c15;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.contact-line span{
+    color:var(--gray);
+    font-size:14px;
+}
+
+.map-card{
+    min-height:340px;
+    display:grid;
+    place-items:center;
+    text-align:center;
+    color:white;
+
+    background:
+        linear-gradient(
+            rgba(35,24,18,.78),
+            rgba(35,24,18,.78)
+        ),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=90")
+        center/cover;
+}
+
+.map-card h3{
+    font-family:Georgia,serif;
+    font-size:32px;
+}
+
+.map-card p{
+    color:#ddd;
+}
+
+
+/* ================================
+   DEMO DISCLAIMER
+================================ */
+
+.demo-disclaimer{
+    background:#080808;
+    color:#aaa;
+    text-align:center;
+    padding:24px 20px;
+    font-size:11px;
+    line-height:1.75;
+    border-top:1px solid #292929;
+}
+
+.demo-disclaimer strong{
+    display:block;
+    color:white;
+    font-size:12px;
+    letter-spacing:1px;
+    margin-bottom:4px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer{
+    background:#101010;
+    color:white;
+}
+
+.footer-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:45px 25px;
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.footer-brand h3{
+    font-family:Georgia,serif;
+    font-size:25px;
+}
+
+.footer-brand p{
+    color:#888;
+    font-size:12px;
+    margin-top:5px;
+}
+
+.footer-right{
+    text-align:right;
+    color:#777;
+    font-size:12px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:98px;
+        left:0;
+        right:0;
+        background:#101010;
+        flex-direction:column;
+        align-items:stretch;
+        padding:20px 25px;
+        border-bottom:1px solid #333;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links button{
+        text-align:left;
+        padding:10px 0;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .info-inner{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .info-item,
+    .info-item:first-child{
+        padding:10px 0;
+        border-right:0;
+        border-bottom:1px solid rgba(0,0,0,.15);
+    }
+
+    .info-item:last-child{
+        border-bottom:0;
+    }
+
+    .grill-grid{
+        grid-template-columns:1fr;
+    }
+
+    .grill-side{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .menu-grid{
+        grid-template-columns:1fr;
+    }
+
+    .story-grid{
+        grid-template-columns:1fr;
+    }
+
+    .story-image{
+        min-height:370px;
+    }
+
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .order-layout{
+        grid-template-columns:1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:57px;
+    }
+
+    .section-heading h2,
+    .story-copy h2{
+        font-size:39px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+    }
+
+    .footer-right{
+        text-align:left;
+    }
+}
+
+@media(max-width:520px){
+
+    .hero{
+        min-height:650px;
+    }
+
+    .hero h1{
+        font-size:48px;
+        letter-spacing:-2px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .grill-side{
+        grid-template-columns:1fr;
+    }
+
+    .food-photo,
+    .grill-side .food-photo{
+        min-height:300px;
+    }
+
+    .menu-item{
+        flex-direction:column;
+        gap:8px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     ANNOUNCEMENT
+================================= -->
+
+<div class="announcement">
+
+    <span>FIRE UP THE GRILL</span>
+    &nbsp; • &nbsp;
+    Pickup available Tuesday–Saturday
+
+</div>
+
+
+<!-- =================================
+     HEADER
+================================= -->
+
+<header>
+
+<div class="nav">
+
+<a
+    href="#"
+    class="logo"
+    onclick="goTo('home'); return false;"
+>
+
+    <div class="logo-main">
+        KINGS GRILL<span>.</span>
+    </div>
+
+    <span class="logo-sub">
+        Grill House · Philadelphia
+    </span>
+
+</a>
+
+
+<button
+    class="mobile-menu"
+    onclick="toggleMenu()"
+>
+    ☰
+</button>
+
+
+<nav
+    class="nav-links"
+    id="navLinks"
+>
+
+    <button onclick="goTo('home')">
+        Home
+    </button>
+
+    <button onclick="goTo('menu')">
+        Menu
+    </button>
+
+    <button onclick="goTo('story')">
+        Our Story
+    </button>
+
+    <button onclick="goTo('reviews')">
+        Reviews
+    </button>
+
+    <button
+        class="order-button"
+        onclick="goTo('order')"
+    >
+        Order Pickup
+    </button>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main id="home">
+
+
+<!-- =================================
+     HERO
+================================= -->
+
+<section class="hero">
+
+<div class="hero-inner">
+
+<div class="hero-content">
+
+<div class="hero-kicker">
+    Fire-Grilled · Made Fresh · Philly
+</div>
+
+<h1>
+    Built around<br>
+    <span>the grill.</span>
+</h1>
+
+<p>
+    Big burgers. Charred steaks. Smoke-kissed chicken.
+    Kings Grill brings the backyard grill flavor to the
+    neighborhood — without making you fire up your own.
+</p>
+
+<div class="hero-buttons">
+
+<button
+    class="btn btn-red"
+    onclick="goTo('order')"
+>
+    Order Pickup
+</button>
+
+<button
+    class="btn btn-white"
+    onclick="goTo('menu')"
+>
+    See The Menu
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =================================
+     INFO
+================================= -->
+
+<section class="info-strip">
+
+<div class="info-inner">
+
+<div class="info-item">
+
+<strong>
+    Fire-Grilled
+</strong>
+
+<span>
+    Cooked fresh to order
+</span>
+
+</div>
+
+
+<div class="info-item">
+
+<strong>
+    Pickup
+</strong>
+
+<span>
+    Order ahead and skip the wait
+</span>
+
+</div>
+
+
+<div class="info-item">
+
+<strong>
+    Kitchen Hours
+</strong>
+
+<span>
+    Tue–Sat · 11 AM – 9 PM
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =================================
+     FEATURED GRILL
+================================= -->
+
+<section class="section feature-section">
+
+<div class="section-heading">
+
+<div class="section-label">
+    Straight From The Fire
+</div>
+
+<h2>
+    The grill is the main character.
+</h2>
+
+<p>
+    Our menu is built around smoky flavor, crispy edges,
+    juicy centers and food worth getting your hands dirty for.
+</p>
+
+</div>
+
+
+<div class="grill-grid">
+
+<div class="food-photo main">
+
+<div class="food-caption">
+
+<h3>
+    Kings Double Burger
+</h3>
+
+<p>
+    Two smashed beef patties, American cheese,
+    grilled onions, shredded lettuce and Kings sauce.
+</p>
+
+<span class="food-price">
+    $14
+</span>
+
+</div>
+
+</div>
+
+
+<div class="grill-side">
+
+<div class="food-photo steak">
+
+<div class="food-caption">
+
+<h3>
+    House Steak
+</h3>
+
+<p>
+    Char-grilled and finished with garlic butter.
+</p>
+
+<span class="food-price">
+    $24
+</span>
+
+</div>
+
+</div>
+
+
+<div class="food-photo chicken">
+
+<div class="food-caption">
+
+<h3>
+    Grilled Chicken
+</h3>
+
+<p>
+    Seasoned, flame-grilled and served hot.
+</p>
+
+<span class="food-price">
+    $16
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =================================
+     MENU
+================================= -->
+
+<section
+    class="section menu-section"
+    id="menu"
+>
+
+<div class="section-heading">
+
+<div class="section-label">
+    The Menu
+</div>
+
+<h2>
+    Come hungry.
+</h2>
+
+<p>
+    Burgers, steaks, chicken, wings, sides and a few things
+    that don't fit neatly into a category.
+</p>
+
+</div>
+
+
+<div class="menu-tabs">
+
+<button
+    class="menu-tab active"
+    onclick="filterMenu('all',this)"
+>
+    All
+</button>
+
+<button
+    class="menu-tab"
+    onclick="filterMenu('burgers',this)"
+>
+    Burgers
+</button>
+
+<button
+    class="menu-tab"
+    onclick="filterMenu('grill',this)"
+>
+    Grill
+</button>
+
+<button
+    class="menu-tab"
+    onclick="filterMenu('wings',this)"
+>
+    Wings
+</button>
+
+<button
+    class="menu-tab"
+    onclick="filterMenu('sides',this)"
+>
+    Sides
+</button>
+
+</div>
+
+
+<div class="menu-grid">
+
+
+<!-- BURGER -->
+
+<div
+    class="menu-item"
+    data-category="burgers"
+>
+
+<div class="menu-info">
+
+<h3>
+    Kings Double
+</h3>
+
+<p>
+    Two smashed patties, American cheese,
+    grilled onions, lettuce and Kings sauce.
+</p>
+
+<button
+    class="add-btn"
+    onclick="addItem('Kings Double',14)"
+>
+    + Add to Order
+</button>
+
+</div>
+
+<div class="menu-price">
+    $14
+</div>
+
+</div>
+
+
+<div
+    class="menu-item"
+    data-category="burgers"
+>
+
+<div class="menu-info">
+
+<h3>
+    BBQ Bacon Burger
+</h3>
+
+<p>
+    Beef patty, smoked bacon, cheddar,
+    crispy onions and house BBQ sauce.
+</p>
+
+<button
+    class="add-btn"
+    onclick="addItem('BBQ Bacon Burger',16)"
+>
+    + Add to Order
+</button>
+
+</div>
+
+<div class="menu-price">
+    $16
+</div>
+
+</div>
+
+
+<div
+    class="menu-item"
+    data-category="burgers"
+>
+
+<div class="menu-info">
+
+<h3>
+    Fire Burger
+</h3>
+
+<p>
+    Pepper jack, jalapeños, grilled onions
+    and spicy Kings sauce.
+</p>
+
+<button
+    class="add-btn"
+    onclick="addItem('Fire Burger',15)"
+>
+    + Add to Order
+</button>
+
+</div>
+
+<div class="menu-price">
+    $15
+</div>
+
+</div>
+
+
+<!-- GRILL -->
+
+<div
+    class="menu-item"
+    data-category="grill"
+>
+
+<div class="menu-info">
+
+<h3>
+    Kings Steak
+</h3>
+
+<p>
+    Char-grilled steak with garlic butter
+    and your choice of two sides.
+</p>
+
+<button
+    class="add-btn"
+    onclick="addItem('Kings Steak',24)"
+>
+    + Add to Order
+</button>
+
+</div>
+
+<div class="menu-price">
+    $24
+</div>
+
+</div>
+
+
+<div
+    class="menu-item"
+    data-category="grill"
+>
+
+<div class="menu-info">
+
+<h3>
+    Grilled Chicken Plate
+</h3>
+
+<p>
+    Marinated grilled chicken served with
+    rice and your choice of side.
+</p>
+
+<button
+    class="add-btn"
+    onclick="addItem('Grilled Chicken Plate',16)"
+>
+    + Add to Order
+</button>
+
+</div>
+
+<div class="menu-price">
+    $16
+</div>
+
+</div>
+
+
+<div
+    class="menu-item"
+    data-category="grill"
+>
+
+<div class="menu-info">
+
+<h3>
+    Grill Combo
+</h3>
+
+<p>
+    Grilled steak, chicken and house sausage
+    with two sides.
+</p>
+
+<button
+    class="add-btn"
+    onclick="addItem('Grill Combo',27)"
+>
+    + Add to Order
+</button>
+
+</div>
+
+<div class="menu-price">
+    $27
+</div>
+
+</div>
+
+
+<!-- WINGS -->
+
+<div
+    class="menu-item"
+    data-category="wings"
+>
+
+<div class="menu-info">
+
+<h3>
+    Kings Wings
+</h3>
+
+<p>
+    Eight crispy wings tossed in your choice
+    of BBQ, buffalo or sweet heat.
+</p>
+
+<button
+    class="add-btn"
+    onclick="addItem('Kings Wings',13)"
+>
+    + Add to Order
+</button>
+
+</div>
+
+<div class="menu-price">
+    $13
+</div>
+
+</div>
+
+
+<div
+    class="menu-item"
+    data-category="wings"
+>
+
+<div class="menu-info">
+
+<h3>
+    Fire Wings
+</h3>
+
+<p>
+    Eight wings glazed with our spicy
+    honey-pepper sauce.
+</p>
+
+<button
+    class="add-btn"
+    onclick="addItem('Fire Wings',14)"
+>
+    + Add to Order
+</button>
+
+</div>
+
+<div class="menu-price">
+    $14
+</div>
+
+</div>
+
+
+<!-- SIDES -->
+
+<div
+    class="menu-item"
+    data-category="sides"
+>
+
+<div class="menu-info">
+
+<h3>
+    Loaded Fries
+</h3>
+
+<p>
+    Seasoned fries, cheddar, grilled onions,
+    chopped steak and Kings sauce.
+</p>
+
+<button
+    class="add-btn"
+    onclick="addItem('Loaded Fries',10)"
+>
+    + Add to Order
+</button>
+
+</div>
+
+<div class="menu-price">
+    $10
+</div>
+
+</div>
+
+
+<div
+    class="menu-item"
+    data-category="sides"
+>
+
+<div class="menu-info">
+
+<h3>
+    Grilled Corn
+</h3>
+
+<p>
+    Charred corn with garlic butter,
+    parmesan and house seasoning.
+</p>
+
+<button
+    class="add-btn"
+    onclick="addItem('Grilled Corn',6)"
+>
+    + Add to Order
+</button>
+
+</div>
+
+<div class="menu-price">
+    $6
+</div>
+
+</div>
+
+
+<div
+    class="menu-item"
+    data-category="sides"
+>
+
+<div class="menu-info">
+
+<h3>
+    Seasoned Fries
+</h3>
+
+<p>
+    Crispy fries tossed with our
+    signature grill seasoning.
+</p>
+
+<button
+    class="add-btn"
+    onclick="addItem('Seasoned Fries',5)"
+>
+    + Add to Order
+</button>
+
+</div>
+
+<div class="menu-price">
+    $5
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =================================
+     STORY
+================================= -->
+
+<section
+    class="section story-section"
+    id="story"
+>
+
+<div class="story-grid">
+
+<div class="story-image"></div>
+
+
+<div class="story-copy">
+
+<div class="section-label">
+    Our Story
+</div>
+
+<h2>
+    Started with a grill.
+    Built into a neighborhood spot.
+</h2>
+
+<p>
+    Kings Grill was created in 2016 by fictional founders
+    Marcus King and Andre Ellis, two Philadelphia friends
+    who believed good food didn't need to be complicated.
+</p>
+
+<p>
+    Their idea was simple: bring people together around a
+    hot grill, serve generous portions and make every plate
+    taste like somebody actually cared about it.
+</p>
+
+<p>
+    What started as a small neighborhood concept eventually
+    became a six-day-a-week grill house known for burgers,
+    steaks, wings and the smell of charcoal drifting down
+    the block.
+</p>
+
+<div class="story-quote">
+
+"Good food brings people to the table.
+Great food keeps them there."
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =================================
+     REVIEWS
+================================= -->
+
+<section
+    class="section reviews-section"
+    id="reviews"
+>
+
+<div class="section-heading">
+
+<div class="section-label">
+    What People Say
+</div>
+
+<h2>
+    The grill speaks for itself.
+</h2>
+
+<p>
+    Fictional customer reviews created specifically for
+    this promotional demo.
+</p>
+
+</div>
+
+
+<div class="review-grid">
+
+
+<div class="review">
+
+<div class="stars">
+    ★★★★★
+</div>
+
+<p>
+    "That burger is ridiculous. The edges were crispy,
+    the cheese was perfect and the sauce had me scraping
+    the wrapper."
+</p>
+
+<div class="review-name">
+    Marcus T.
+</div>
+
+<div class="review-meta">
+    Philadelphia, PA
+</div>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+    ★★★★★
+</div>
+
+<p>
+    "The grill combo is exactly what I want when I'm
+    hungry. Steak, chicken, sausage and enough food
+    to actually fill you up."
+</p>
+
+<div class="review-name">
+    Jaylen R.
+</div>
+
+<div class="review-meta">
+    North Philadelphia
+</div>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+    ★★★★★
+</div>
+
+<p>
+    "Ordered wings and loaded fries for the family.
+    Everything showed up hot and seasoned perfectly."
+</p>
+
+<div class="review-name">
+    Danielle W.
+</div>
+
+<div class="review-meta">
+    Philadelphia, PA
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =================================
+     ORDER
+================================= -->
+
+<section
+    class="section order-section"
+    id="order"
+>
+
+<div class="section-heading">
+
+<div class="section-label">
+    Pickup Orders
+</div>
+
+<h2>
+    Build your order.
+</h2>
+
+<p>
+    Add something from the menu, choose your pickup time,
+    and submit your fictional demo order.
+</p>
+
+</div>
+
+
+<div class="order-layout">
+
+
+<!-- CART -->
+
+<div class="order-panel">
+
+<h3>
+    Your Order
+</h3>
+
+<div
+    class="order-items"
+    id="cartItems"
+>
+
+<div class="empty-cart">
+    Your order is empty. Add something from the menu.
+</div>
+
+</div>
+
+
+<div class="totals">
+
+<div class="total-row">
+
+<span>
+    Subtotal
+</span>
+
+<span id="subtotal">
+    $0.00
+</span>
+
+</div>
+
+
+<div class="total-row">
+
+<span>
+    Estimated tax
+</span>
+
+<span id="tax">
+    $0.00
+</span>
+
+</div>
+
+
+<div class="total-row final">
+
+<span>
+    Total
+</span>
+
+<span id="total">
+    $0.00
+</span>
+
+</div>
+
+</div>
+
+
+<button
+    class="checkout"
+    onclick="submitOrder()"
+>
+    Place Pickup Order
+</button>
+
+</div>
+
+
+<!-- FORM -->
+
+<div
+    class="checkout-form"
+    id="checkoutForm"
+>
+
+<h3>
+    Pickup Details
+</h3>
+
+
+<div class="form-group">
+
+<label>
+    Name
+</label>
+
+<input
+    type="text"
+    id="customerName"
+    placeholder="First and last name"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Phone
+</label>
+
+<input
+    type="tel"
+    id="customerPhone"
+    placeholder="(215) 555-0198"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Pickup Time
+</label>
+
+<select id="pickupTime">
+
+<option value="">
+    Select a time
+</option>
+
+<option>
+    11:30 AM
+</option>
+
+<option>
+    12:00 PM
+</option>
+
+<option>
+    12:30 PM
+</option>
+
+<option>
+    1:00 PM
+</option>
+
+<option>
+    1:30 PM
+</option>
+
+<option>
+    2:00 PM
+</option>
+
+<option>
+    3:00 PM
+</option>
+
+<option>
+    4:00 PM
+</option>
+
+<option>
+    5:00 PM
+</option>
+
+<option>
+    5:30 PM
+</option>
+
+<option>
+    6:00 PM
+</option>
+
+<option>
+    6:30 PM
+</option>
+
+<option>
+    7:00 PM
+</option>
+
+<option>
+    7:30 PM
+</option>
+
+<option>
+    8:00 PM
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Order Notes
+</label>
+
+<input
+    type="text"
+    id="orderNotes"
+    placeholder="Extra sauce, no onions, etc."
+>
+
+</div>
+
+</div>
+
+
+<!-- SUCCESS -->
+
+<div
+    class="confirmation"
+    id="confirmation"
+>
+
+<div class="confirm-icon">
+    ✓
+</div>
+
+<h3>
+    Order received.
+</h3>
+
+<p id="confirmationText">
+    Your fictional Kings Grill pickup order has been created
+    for this website demo.
+</p>
+
+<button
+    class="btn btn-red"
+    onclick="newOrder()"
+>
+    Start Another Order
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =================================
+     CONTACT
+================================= -->
+
+<section
+    class="section contact-section"
+>
+
+<div class="section-heading">
+
+<div class="section-label">
+    Find Kings
+</div>
+
+<h2>
+    Come hungry.
+</h2>
+
+<p>
+    Fictional location and contact information for this
+    promotional website demo.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card">
+
+<h3>
+    Kings Grill
+</h3>
+
+
+<div class="contact-line">
+
+<strong>
+    Address
+</strong>
+
+<span>
+    2418 N Broad Street<br>
+    Philadelphia, PA 19132
+</span>
+
+</div>
+
+
+<div class="contact-line">
+
+<strong>
+    Phone
+</strong>
+
+<span>
+    (215) 555-0177
+</span>
+
+</div>
+
+
+<div class="contact-line">
+
+<strong>
+    Hours
+</strong>
+
+<span>
+    Tuesday–Thursday · 11 AM – 8 PM<br>
+    Friday–Saturday · 11 AM – 9 PM<br>
+    Sunday–Monday · Closed
+</span>
+
+</div>
+
+</div>
+
+
+<div class="map-card">
+
+<div>
+
+<h3>
+    Kings Grill
+</h3>
+
+<p>
+    North Philadelphia
+</p>
+
+<br>
+
+<small>
+    Fictional location · Promotional demo
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =================================
+     FOOTER
+================================= -->
+
+<footer>
+
+<div class="footer-inner">
+
+<div class="footer-brand">
+
+<h3>
+    Kings Grill.
+</h3>
+
+<p>
+    Fire-grilled food. Big flavor.
+    Philadelphia attitude.
+</p>
+
+</div>
+
+
+<div class="footer-right">
+
+© 2026 Kings Grill<br>
+Philadelphia, Pennsylvania
+
+</div>
+
+</div>
+
+
+<div class="demo-disclaimer">
+
+<strong>
+    ⚠ PROMOTIONAL DEMO — NOT A REAL BUSINESS
+</strong>
+
+This website is strictly a promotional demo created by
+Lynx &amp; Co. Web Studio. Kings Grill is a fictional
+business created for demonstration purposes and is not
+a real business. All names, reviews, addresses, phone
+numbers, menu items, prices, hours, stories and other
+business information shown on this website are fictional.
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =================================
+   NAVIGATION
+================================= */
+
+function goTo(section){
+
+    const element =
+        document.getElementById(section);
+
+    if(!element) return;
+
+    element.scrollIntoView({
+        behavior:"smooth"
+    });
+
+    document
+        .getElementById("navLinks")
+        .classList.remove("active");
+}
+
+
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList.toggle("active");
+
+}
+
+
+/* =================================
+   MENU FILTER
+================================= */
+
+function filterMenu(category,button){
+
+    document
+        .querySelectorAll(".menu-tab")
+        .forEach(tab=>{
+            tab.classList.remove("active");
+        });
+
+    button.classList.add("active");
+
+
+    document
+        .querySelectorAll(".menu-item")
+        .forEach(item=>{
+
+            if(
+                category === "all" ||
+                item.dataset.category === category
+            ){
+
+                item.classList.remove("hidden");
+
+            }else{
+
+                item.classList.add("hidden");
+
+            }
+
+        });
+
+}
+
+
+/* =================================
+   CART
+================================= */
+
+let cart = [];
+
+
+function addItem(name,price){
+
+    const existing =
+        cart.find(
+            item => item.name === name
+        );
+
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+            name:name,
+            price:price,
+            quantity:1
+        });
+
+    }
+
+
+    renderCart();
+
+    goTo("order");
+
+}
+
+
+function changeQuantity(name,amount){
+
+    const item =
+        cart.find(
+            item => item.name === name
+        );
+
+
+    if(!item) return;
+
+
+    item.quantity += amount;
+
+
+    if(item.quantity <= 0){
+
+        cart =
+            cart.filter(
+                item => item.name !== name
+            );
+
+    }
+
+
+    renderCart();
+
+}
+
+
+function renderCart(){
+
+    const container =
+        document.getElementById(
+            "cartItems"
+        );
+
+
+    if(cart.length === 0){
+
+        container.innerHTML =
+            `
+            <div class="empty-cart">
+                Your order is empty.
+                Add something from the menu.
+            </div>
+            `;
+
+        updateTotals();
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    cart.forEach(item=>{
+
+        const row =
+            document.createElement("div");
+
+
+        row.className =
+            "cart-item";
+
+
+        row.innerHTML =
+
+        `
+        <div>
+
+            <div class="cart-name">
+                ${item.name}
+            </div>
+
+            <div class="quantity">
+
+                <button
+                    onclick="changeQuantity('${item.name}',-1)"
+                >
+                    −
+                </button>
+
+                <span>
+                    ${item.quantity}
+                </span>
+
+                <button
+                    onclick="changeQuantity('${item.name}',1)"
+                >
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="cart-price">
+            $${(item.price * item.quantity).toFixed(2)}
+        </div>
+        `;
+
+
+        container.appendChild(row);
+
+    });
+
+
+    updateTotals();
+
+}
+
+
+/* =================================
+   TOTALS
+================================= */
+
+function updateTotals(){
+
+    let subtotal = 0;
+
+
+    cart.forEach(item=>{
+
+        subtotal +=
+            item.price *
+            item.quantity;
+
+    });
+
+
+    const tax =
+        subtotal * 0.08;
+
+
+    const total =
+        subtotal + tax;
+
+
+    document.getElementById(
+        "subtotal"
+    ).textContent =
+        "$" + subtotal.toFixed(2);
+
+
+    document.getElementById(
+        "tax"
+    ).textContent =
+        "$" + tax.toFixed(2);
+
+
+    document.getElementById(
+        "total"
+    ).textContent =
+        "$" + total.toFixed(2);
+
+}
+
+
+/* =================================
+   PLACE ORDER
+================================= */
+
+function submitOrder(){
+
+    if(cart.length === 0){
+
+        alert(
+            "Add something to your order first."
+        );
+
+        return;
+
+    }
+
+
+    const name =
+        document
+            .getElementById("customerName")
+            .value
+            .trim();
+
+
+    const phone =
+        document
+            .getElementById("customerPhone")
+            .value
+            .trim();
+
+
+    const time =
+        document
+            .getElementById("pickupTime")
+            .value;
+
+
+    if(!name){
+
+        alert(
+            "Please enter your name."
+        );
+
+        return;
+
+    }
+
+
+    if(!phone){
+
+        alert(
+            "Please enter your phone number."
+        );
+
+        return;
+
+    }
+
+
+    if(!time){
+
+        alert(
+            "Please choose a pickup time."
+        );
+
+        return;
+
+    }
+
+
+    const orderNumber =
+        Math.floor(
+            1000 +
+            Math.random() * 9000
+        );
+
+
+    document.getElementById(
+        "confirmationText"
+    ).innerHTML =
+
+        `
+        Thanks, ${name}. Your fictional
+        Kings Grill order <strong>#${orderNumber}</strong>
+        is scheduled for pickup at
+        <strong>${time}</strong>.
+        `;
+
+
+    document.getElementById(
+        "checkoutForm"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "confirmation"
+    ).classList.add("show");
+
+}
+
+
+/* =================================
+   NEW ORDER
+================================= */
+
+function newOrder(){
+
+    cart = [];
+
+
+    document.getElementById(
+        "customerName"
+    ).value = "";
+
+
+    document.getElementById(
+        "customerPhone"
+    ).value = "";
+
+
+    document.getElementById(
+        "pickupTime"
+    ).value = "";
+
+
+    document.getElementById(
+        "orderNotes"
+    ).value = "";
+
+
+    document.getElementById(
+        "checkoutForm"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "confirmation"
+    ).classList.remove("show");
+
+
+    renderCart();
+
+}
+
+
+/* =================================
+   INITIALIZE
+================================= */
+
+renderCart();
+
+</script>
+
+</body>
+</html>
