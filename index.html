@@ -1,62 +1,431 @@
-<article class="work-card">
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="project-preview grill">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <div class="browser">
+    <meta name="description"
+        content="Lynx & Co. Web Studio creates modern websites for businesses ready to stand out online.">
 
-            <div class="browser-bar">
+    <meta name="theme-color" content="#101010">
 
-                <span class="browser-dot"></span>
-                <span class="browser-dot"></span>
-                <span class="browser-dot"></span>
+    <title>Lynx & Co. Web Studio | Websites That Stand Out</title>
 
-            </div>
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #101010;
+            color: #f5f5f5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        :root {
+            --black: #101010;
+            --black-soft: #151515;
+            --card: #181818;
+            --card-hover: #1d1d1d;
+
+            --border: rgba(255, 255, 255, 0.09);
+            --border-strong: rgba(255, 255, 255, 0.16);
+
+            --white: #f5f5f5;
+            --muted: #999999;
+
+            --yellow: #f4c430;
+            --yellow-light: #ffd84d;
+        }
 
 
-            <div class="preview-page">
+        /* =====================================================
+           SCROLLING LYNX BACKGROUND
+        ===================================================== */
 
-                <h4>
-                    King's Grill
-                </h4>
+        .lynx-background {
+            position: fixed;
 
-                <div class="preview-line"></div>
+            width: min(850px, 75vw);
+            height: min(850px, 75vw);
 
-                <div class="preview-line short"></div>
+            left: 50%;
+            top: 42%;
 
-                <div class="preview-button"></div>
+            transform:
+                translate3d(-50%, -50%, 0)
+                scale(1);
 
-            </div>
+            z-index: 0;
 
-        </div>
+            pointer-events: none;
 
-    </div>
+            opacity: 0.14;
+
+            mix-blend-mode: screen;
+
+            filter: grayscale(100%);
+
+            transition:
+                opacity 0.15s linear,
+                filter 0.15s linear,
+                transform 0.15s linear;
+        }
+
+        .lynx-background::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -120px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(244, 196, 48, 0.12) 0%,
+                    rgba(244, 196, 48, 0.035) 32%,
+                    transparent 70%
+                );
+
+            filter: blur(35px);
+        }
+
+        .lynx-background img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
+
+            opacity: 0.95;
+
+            filter: blur(var(--lynx-blur, 0px));
+
+            transform: scale(var(--lynx-scale, 1));
+
+            transform-origin: center center;
+
+            transition: filter 0.15s linear, transform 0.15s linear;
+        }
 
 
-    <div class="work-info">
+        /* Atmospheric background */
 
-        <div class="work-type">
-            Restaurant
-        </div>
+        .background-glow {
+            position: fixed;
 
-        <h3>
-            King's Grill
-        </h3>
+            width: 700px;
+            height: 700px;
 
-        <p>
+            right: -300px;
+            top: 5%;
 
-            A restaurant website concept
-            designed to showcase the menu
-            and bring in more customers.
+            border-radius: 50%;
 
-        </p>
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(244, 196, 48, 0.06),
+                    transparent 68%
+                );
 
-        <a
-            href="kingsgrill.html"
-            class="button"
-        >
-            View Demo →
-        </a>
+            filter: blur(50px);
 
-    </div>
+            pointer-events: none;
 
-</article>
+            z-index: 0;
+        }
+
+        .background-glow-two {
+            position: fixed;
+
+            width: 600px;
+            height: 600px;
+
+            left: -300px;
+            bottom: 5%;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255, 255, 255, 0.035),
+                    transparent 68%
+                );
+
+            filter: blur(55px);
+
+            pointer-events: none;
+
+            z-index: 0;
+        }
+
+
+        /* Subtle page texture */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: 1;
+
+            opacity: 0.035;
+
+            background-image:
+                radial-gradient(
+                    rgba(255,255,255,0.8) 0.6px,
+                    transparent 0.6px
+                );
+
+            background-size: 6px 6px;
+        }
+
+
+        /* Keep the interactive Lynx behind the content, but above the page background */
+
+        nav,
+        main,
+        footer {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        .container {
+            width: min(1180px, 84%);
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            color: var(--yellow);
+
+            font-size: 0.78rem;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+
+            width: 28px;
+            height: 1px;
+
+            background: var(--yellow);
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        nav {
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            border-bottom: 1px solid var(--border);
+
+            background: rgba(16, 16, 16, 0.82);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .nav-inner {
+            width: min(1180px, 84%);
+
+            min-height: 82px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 135px;
+
+            height: auto;
+
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+
+            list-style: none;
+        }
+
+        nav a {
+            color: #aaa;
+
+            text-decoration: none;
+
+            font-size: 0.9rem;
+
+            transition: 0.25s ease;
+        }
+
+        nav a:hover {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            padding: 10px 17px;
+
+            border: 1px solid var(--border-strong);
+
+            border-radius: 7px;
+
+            color: var(--white);
+        }
+
+        .nav-cta:hover {
+            border-color: var(--yellow);
+
+            color: var(--yellow);
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .button {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            min-height: 50px;
+
+            padding: 0 23px;
+
+            border-radius: 7px;
+
+            background: var(--yellow);
+
+            color: #080808;
+
+            text-decoration: none;
+
+            font-size: 0.9rem;
+
+            font-weight: 700;
+
+            border: none;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .button:hover {
+            background: var(--yellow-light);
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 35px
+                rgba(244, 196, 48, 0.16);
+        }
+
+        .button-outline {
+            background: transparent;
+
+            color: var(--white);
+
+            border: 1px solid var(--border-strong);
+        }
+
+        .button-outline:hover {
+            background: rgba(255,255,255,0.04);
+
+            border-color: var(--yellow);
+
+            color: var(--yellow);
+
+            box-shadow: none;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: calc(100vh - 82px);
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
