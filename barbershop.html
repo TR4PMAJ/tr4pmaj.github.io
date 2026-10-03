@@ -1,208 +1,1029 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+<title>Liberty Line Barbershop | Philadelphia, PA</title>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Liberty Line Barbershop — a fictional promotional website demo created by Lynx & Co. Web Studio.">
 
-    <title>Philly Fresh Cuts</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <style>
+:root {
+    --red: #c62828;
+    --dark-red: #8e1b1b;
+    --blue: #102a56;
+    --light-blue: #e9f0fa;
+    --white: #ffffff;
+    --cream: #f8f6f1;
+    --black: #111111;
+    --gray: #686868;
+    --border: #dedede;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #111;
-            color: white;
-        }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cream);
+    color: var(--black);
+    line-height: 1.6;
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: #181818;
-        }
+/* =========================
+   HEADER
+========================= */
 
-        nav h2 {
-            color: #f5c542;
-        }
+header {
+    background: var(--white);
+    border-bottom: 4px solid var(--red);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
+.top-strip {
+    height: 7px;
+    background: linear-gradient(
+        to right,
+        var(--red) 0%,
+        var(--red) 33%,
+        var(--white) 33%,
+        var(--white) 66%,
+        var(--blue) 66%,
+        var(--blue) 100%
+    );
+}
 
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
+.navbar {
+    max-width: 1180px;
+    margin: auto;
+    padding: 17px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
 
-        .hero h1 {
-            font-size: 55px;
-            margin-bottom: 15px;
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--blue);
+}
 
-        .hero p {
-            color: #ccc;
-            font-size: 18px;
-            max-width: 550px;
-            margin-bottom: 30px;
-        }
+.logo-mark {
+    width: 42px;
+    height: 42px;
+    background: var(--blue);
+    color: white;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    font-size: 20px;
+    border-radius: 50%;
+    border: 3px solid var(--red);
+}
 
-        .button {
-            background: #f5c542;
-            color: #111;
-            padding: 14px 25px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.logo-text {
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+}
 
-        section {
-            padding: 80px 8%;
-            text-align: center;
-        }
+.logo-text span {
+    display: block;
+    color: var(--red);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
 
-        section h2 {
-            font-size: 35px;
-            margin-bottom: 40px;
-        }
+nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
 
-        .services {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
+nav button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    padding: 8px 2px;
+}
 
-        .card {
-            background: #1d1d1d;
-            padding: 30px;
-            border-radius: 10px;
-            width: 280px;
-        }
+nav button:hover {
+    color: var(--red);
+}
 
-        .card h3 {
-            color: #f5c542;
-            margin-bottom: 10px;
-        }
+.nav-book {
+    background: var(--red) !important;
+    color: white !important;
+    padding: 11px 18px !important;
+    border-radius: 4px;
+}
 
-        .price {
-            font-size: 25px;
-            margin: 15px 0;
-        }
+.mobile-menu {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+}
 
-        footer {
-            background: #181818;
-            padding: 30px;
-            text-align: center;
-            color: #888;
-        }
+/* =========================
+   HERO
+========================= */
 
-        @media (max-width: 600px) {
+.hero {
+    min-height: 650px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,24,50,.96) 0%,
+            rgba(8,24,50,.91) 43%,
+            rgba(8,24,50,.38) 100%
+        ),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    color: white;
+    display: flex;
+    align-items: center;
+}
 
-            .hero h1 {
-                font-size: 40px;
-            }
+.hero-inner {
+    max-width: 1180px;
+    width: 100%;
+    margin: auto;
+    padding: 80px 24px;
+}
 
-            nav {
-                padding: 20px;
-            }
+.hero-content {
+    max-width: 620px;
+}
 
-        }
+.kicker {
+    color: #e85a5a;
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
 
-    </style>
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: .96;
+    margin-bottom: 24px;
+}
 
+.hero h1 span {
+    color: #e34a4a;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #e3e8ef;
+    max-width: 550px;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .2s;
+}
+
+.btn-red {
+    background: var(--red);
+    color: white;
+}
+
+.btn-white {
+    background: white;
+    color: var(--blue);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================
+   INFO BAR
+========================= */
+
+.info-bar {
+    background: var(--red);
+    color: white;
+}
+
+.info-inner {
+    max-width: 1180px;
+    margin: auto;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+}
+
+.info-icon {
+    font-size: 24px;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-item span {
+    font-size: 13px;
+    opacity: .9;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.section {
+    max-width: 1180px;
+    margin: auto;
+    padding: 90px 24px;
+}
+
+.section-heading {
+    max-width: 650px;
+    margin-bottom: 45px;
+}
+
+.section-label {
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    color: var(--blue);
+    font-family: Georgia, serif;
+    font-size: 44px;
+    line-height: 1.05;
+}
+
+.section-heading p {
+    color: var(--gray);
+    margin-top: 15px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-section {
+    background: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background: #fafafa;
+    border: 1px solid var(--border);
+    padding: 28px;
+    position: relative;
+    transition: .25s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    border-color: #c8c8c8;
+}
+
+.service-card.featured {
+    border-top: 5px solid var(--red);
+}
+
+.service-card h3 {
+    color: var(--blue);
+    font-family: Georgia, serif;
+    font-size: 24px;
+}
+
+.service-card p {
+    color: var(--gray);
+    font-size: 14px;
+    margin: 12px 0 20px;
+}
+
+.price {
+    font-size: 25px;
+    font-weight: 900;
+    color: var(--red);
+}
+
+.duration {
+    font-size: 12px;
+    color: #888;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-image {
+    min-height: 520px;
+    background:
+        linear-gradient(
+            rgba(16,42,86,.12),
+            rgba(16,42,86,.12)
+        ),
+        url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1000&q=85")
+        center/cover;
+}
+
+.about-copy h2 {
+    font-family: Georgia, serif;
+    color: var(--blue);
+    font-size: 46px;
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.about-copy p {
+    color: var(--gray);
+    margin-bottom: 18px;
+}
+
+.story-box {
+    border-left: 4px solid var(--red);
+    padding-left: 20px;
+    margin-top: 28px;
+}
+
+.story-box strong {
+    color: var(--blue);
+}
+
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews-section {
+    background: var(--blue);
+    color: white;
+}
+
+.reviews-section .section-heading h2 {
+    color: white;
+}
+
+.reviews-section .section-heading p {
+    color: #bfcbe0;
+}
+
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.review {
+    background: white;
+    color: var(--black);
+    padding: 28px;
+    border-radius: 3px;
+}
+
+.stars {
+    color: #d62828;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.review p {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    line-height: 1.55;
+    margin-bottom: 22px;
+}
+
+.reviewer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--red);
+    color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+}
+
+.reviewer strong {
+    display: block;
+}
+
+.reviewer span {
+    font-size: 12px;
+    color: #777;
+}
+
+/* =========================
+   BOOKING
+========================= */
+
+.booking-section {
+    background: #f1f3f6;
+}
+
+.booking-wrapper {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0,0,0,.08);
+}
+
+.booking-header {
+    padding: 30px;
+    border-bottom: 1px solid var(--border);
+}
+
+.booking-header h2 {
+    color: var(--blue);
+    font-family: Georgia, serif;
+    font-size: 32px;
+}
+
+.booking-header p {
+    color: var(--gray);
+}
+
+.booking-body {
+    padding: 30px;
+}
+
+.booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    background: white;
+    font-size: 15px;
+    border-radius: 3px;
+}
+
+select:focus,
+input:focus {
+    outline: 2px solid rgba(198,40,40,.2);
+    border-color: var(--red);
+}
+
+/* Calendar */
+
+.calendar {
+    border: 1px solid var(--border);
+}
+
+.calendar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--blue);
+    color: white;
+    padding: 15px;
+}
+
+.calendar-top button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.calendar-top strong {
+    font-size: 15px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+.day-name {
+    font-size: 10px;
+    font-weight: 900;
+    color: #777;
+    padding: 12px 0;
+}
+
+.calendar-date {
+    border: none;
+    background: white;
+    padding: 13px 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.calendar-date:hover:not(:disabled) {
+    background: var(--light-blue);
+}
+
+.calendar-date.selected {
+    background: var(--red);
+    color: white;
+    font-weight: 900;
+}
+
+.calendar-date:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.time-btn {
+    padding: 10px 5px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.time-btn:hover {
+    border-color: var(--red);
+}
+
+.time-btn.selected {
+    background: var(--red);
+    color: white;
+    border-color: var(--red);
+}
+
+.booking-submit {
+    width: 100%;
+    margin-top: 10px;
+    background: var(--red);
+    color: white;
+    padding: 16px;
+    border: none;
+    font-weight: 900;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.booking-submit:hover {
+    background: var(--dark-red);
+}
+
+/* =========================
+   CONFIRMATION
+========================= */
+
+.confirmation {
+    display: none;
+    padding: 45px 30px;
+    text-align: center;
+}
+
+.confirmation.show {
+    display: block;
+}
+
+.confirmation-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    background: #e7f5ea;
+    color: #1e7a35;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+}
+
+.confirmation h3 {
+    color: var(--blue);
+    font-family: Georgia, serif;
+    font-size: 30px;
+}
+
+.confirmation p {
+    color: var(--gray);
+    margin: 10px auto;
+    max-width: 500px;
+}
+
+.booking-details {
+    background: #f5f6f8;
+    padding: 20px;
+    max-width: 500px;
+    margin: 25px auto;
+    text-align: left;
+}
+
+.booking-details div {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.booking-details div:last-child {
+    border-bottom: none;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    background: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-card {
+    border: 1px solid var(--border);
+    padding: 30px;
+}
+
+.contact-card h3 {
+    color: var(--blue);
+    font-family: Georgia, serif;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.contact-line {
+    margin-bottom: 17px;
+}
+
+.contact-line strong {
+    display: block;
+    color: var(--blue);
+}
+
+.contact-line span {
+    color: var(--gray);
+}
+
+.map {
+    min-height: 300px;
+    background:
+        linear-gradient(
+            rgba(16,42,86,.78),
+            rgba(16,42,86,.78)
+        ),
+        url("https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1000&q=80")
+        center/cover;
+    display: grid;
+    place-items: center;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.map strong {
+    font-family: Georgia, serif;
+    font-size: 27px;
+}
+
+/* =========================
+   DEMO DISCLAIMER
+========================= */
+
+.demo-disclaimer {
+    background: #070f1d;
+    border-top: 1px solid #263550;
+    padding: 22px 24px;
+    text-align: center;
+    color: #c8d0dc;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.demo-disclaimer strong {
+    display: block;
+    color: white;
+    font-size: 13px;
+    letter-spacing: .5px;
+    margin-bottom: 3px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #091b36;
+    color: white;
+}
+
+.footer-inner {
+    max-width: 1180px;
+    margin: auto;
+    padding: 45px 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-brand {
+    max-width: 400px;
+}
+
+.footer-brand h3 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
+
+.footer-brand p {
+    color: #9daabd;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.footer-right {
+    text-align: right;
+    color: #9daabd;
+    font-size: 13px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 2px solid var(--red);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .info-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid,
+    .reviews {
+        grid-template-columns: 1fr;
+    }
+
+    .about,
+    .contact-grid,
+    .booking-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        min-height: 350px;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .section-heading h2,
+    .about-copy h2 {
+        font-size: 37px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+
+    .footer-right {
+        text-align: left;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<nav>
+<!-- =========================
+     HEADER
+========================= -->
 
-    <h2>Philly Fresh Cuts</h2>
+<header>
 
-    <div>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+    <div class="top-strip"></div>
+
+    <div class="navbar">
+
+        <a href="#"
+           class="logo"
+           onclick="showSection('home'); return false;">
+
+            <div class="logo-mark">
+                LL
+            </div>
+
+            <div class="logo-text">
+
+                LIBERTY LINE
+
+                <span>
+                    Barbershop · Philadelphia
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <button
+            class="mobile-menu"
+            onclick="toggleMenu()">
+
+            ☰
+
+        </button>
+
+
+        <nav id="nav">
+
+            <button onclick="showSection('home')">
+                Home
+            </button>
+
+            <button onclick="showSection('services')">
+                Services
+            </button>
+
+            <button onclick="showSection('about')">
+                About
+            </button>
+
+            <button onclick="showSection('reviews')">
+                Reviews
+            </button>
+
+            <button
+                class="nav-book"
+                onclick="showSection('booking')">
+
+                Book a Cut
+
+            </button>
+
+        </nav>
+
     </div>
 
-</nav>
+</header>
 
 
-<div class="hero">
+<!-- =========================
+     HOME
+========================= -->
 
-    <h1>Look Fresh.<br>Feel Fresh.</h1>
+<main id="home">
 
-    <p>
-        Professional cuts and clean fades
-        right here in Philadelphia.
-    </p>
+<section class="hero">
 
-    <a class="button" href="#contact">
-        Book an Appointment
-    </a>
+    <div class="hero-inner">
 
-</div>
+        <div class="hero-content">
 
+            <div class="kicker">
+                North Philadelphia · Est. 2014
+            </div>
 
-<section id="services">
-
-    <h2>Our Services</h2>
-
-    <div class="services">
-
-        <div class="card">
-
-            <h3>Fresh Fade</h3>
+            <h1>
+                Philly cuts.<br>
+                <span>No shortcuts.</span>
+            </h1>
 
             <p>
-                Clean fade with your choice
-                of style.
+                Clean fades, sharp lines and the kind of service
+                that keeps you coming back. Liberty Line is a
+                neighborhood barbershop built for people who care
+                about their cut.
             </p>
 
-            <div class="price">$30</div>
+            <div class="hero-buttons">
 
-        </div>
+                <button
+                    class="btn btn-red"
+                    onclick="showSection('booking')">
 
+                    Book an Appointment
 
-        <div class="card">
+                </button>
 
-            <h3>Haircut + Beard</h3>
+                <button
+                    class="btn btn-white"
+                    onclick="showSection('services')">
 
-            <p>
-                Full haircut and beard lineup.
-            </p>
+                    View Services
 
-            <div class="price">$40</div>
+                </button>
 
-        </div>
-
-
-        <div class="card">
-
-            <h3>Kids Cut</h3>
-
-            <p>
-                Clean and fresh haircut
-                for kids.
-            </p>
-
-            <div class="price">$25</div>
+            </div>
 
         </div>
 
@@ -211,33 +1032,1564 @@
 </section>
 
 
-<section id="contact">
+<!-- =========================
+     INFO BAR
+========================= -->
 
-    <h2>Ready for a Fresh Cut?</h2>
+<section class="info-bar">
 
-    <p>
-        Call or message us to book your appointment.
-    </p>
+    <div class="info-inner">
 
-    <br>
+        <div class="info-item">
 
-    <a class="button"
-       href="mailto:majperry2025@gmail.com">
+            <div class="info-icon">
+                ✂
+            </div>
 
-        Book Now
+            <div>
 
-    </a>
+                <strong>
+                    Walk-ins Welcome
+                </strong>
+
+                <span>
+                    When availability allows
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <div class="info-icon">
+                ★
+            </div>
+
+            <div>
+
+                <strong>
+                    5-Star Service
+                </strong>
+
+                <span>
+                    Local Philly favorite
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <div class="info-icon">
+                📍
+            </div>
+
+            <div>
+
+                <strong>
+                    Philadelphia
+                </strong>
+
+                <span>
+                    North Broad neighborhood
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section
+    class="section services-section"
+    id="services">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            The Chair
+        </div>
+
+        <h2>
+            Come in looking rough.<br>
+            Leave looking right.
+        </h2>
+
+        <p>
+            No mystery pricing. No rushed cuts. Just straightforward
+            services and barbers who know what they're doing.
+        </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+        <div class="service-card featured">
+
+            <h3>
+                Signature Fade
+            </h3>
+
+            <p>
+                Skin fade or taper, finished with your preferred
+                length on top and a clean neckline.
+            </p>
+
+            <span class="price">
+                $35
+            </span>
+
+            <span class="duration">
+                · 40 min
+            </span>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>
+                Classic Cut
+            </h3>
+
+            <p>
+                Scissor or clipper cut with a hot towel neck cleanup
+                and finished style.
+            </p>
+
+            <span class="price">
+                $30
+            </span>
+
+            <span class="duration">
+                · 35 min
+            </span>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>
+                Beard Service
+            </h3>
+
+            <p>
+                Shape, line-up, hot towel treatment and beard
+                conditioning.
+            </p>
+
+            <span class="price">
+                $22
+            </span>
+
+            <span class="duration">
+                · 25 min
+            </span>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>
+                Cut + Beard
+            </h3>
+
+            <p>
+                Our most popular combination. Full haircut and
+                detailed beard shaping.
+            </p>
+
+            <span class="price">
+                $50
+            </span>
+
+            <span class="duration">
+                · 60 min
+            </span>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>
+                Kids Cut
+            </h3>
+
+            <p>
+                Patient, clean and age-appropriate cuts for kids
+                12 and under.
+            </p>
+
+            <span class="price">
+                $25
+            </span>
+
+            <span class="duration">
+                · 30 min
+            </span>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>
+                Line-Up
+            </h3>
+
+            <p>
+                Quick edge-up around the hairline, temples and
+                neckline.
+            </p>
+
+            <span class="price">
+                $18
+            </span>
+
+            <span class="duration">
+                · 15 min
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+    class="section"
+    id="about">
+
+    <div class="about">
+
+        <div class="about-image"></div>
+
+
+        <div class="about-copy">
+
+            <div class="section-label">
+                Our Story
+            </div>
+
+            <h2>
+                Built on Broad Street.
+                Kept alive by Philly.
+            </h2>
+
+            <p>
+                Liberty Line started in 2014 when two longtime
+                friends, Marcus Bell and Andre Williams, decided
+                Philadelphia needed another barbershop where
+                people could actually feel at home.
+            </p>
+
+            <p>
+                They rented a small storefront just off North Broad
+                with three chairs, two clippers and a hand-painted
+                sign. Word traveled quickly.
+            </p>
+
+            <p>
+                Today, Liberty Line has grown into a six-chair shop
+                without losing the neighborhood feel that got people
+                through the door in the first place.
+            </p>
+
+            <div class="story-box">
+
+                <strong>
+                    "A good haircut gets you ready for the week.
+                    A good barber remembers your name."
+                </strong>
+
+                <br>
+
+                <span>
+                    — Marcus Bell, Co-Founder
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section
+    class="section reviews-section"
+    id="reviews">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            From the Chair
+        </div>
+
+        <h2>
+            Don't just take our word for it.
+        </h2>
+
+        <p>
+            What customers around the neighborhood have been saying.
+        </p>
+
+    </div>
+
+
+    <div class="reviews">
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Been coming here for almost two years. I showed
+                Marcus a picture once and he remembered exactly
+                how I wanted it the next time."
+            </p>
+
+            <div class="reviewer">
+
+                <div class="avatar">
+                    D
+                </div>
+
+                <div>
+
+                    <strong>
+                        DeShawn R.
+                    </strong>
+
+                    <span>
+                        Philadelphia, PA
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Finally found a shop where my fade actually looks
+                the same every time. Booking online makes it super
+                easy too."
+            </p>
+
+            <div class="reviewer">
+
+                <div class="avatar">
+                    J
+                </div>
+
+                <div>
+
+                    <strong>
+                        Jordan M.
+                    </strong>
+
+                    <span>
+                        North Philadelphia
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Took my son in for his first real haircut and
+                everybody was patient with him. He left smiling
+                and asking when we could come back."
+            </p>
+
+            <div class="reviewer">
+
+                <div class="avatar">
+                    K
+                </div>
+
+                <div>
+
+                    <strong>
+                        Keisha T.
+                    </strong>
+
+                    <span>
+                        Philadelphia, PA
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BOOKING
+========================= -->
+
+<section
+    class="section booking-section"
+    id="booking">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            Appointments
+        </div>
+
+        <h2>
+            Pick your day.<br>
+            Pick your chair.
+        </h2>
+
+        <p>
+            Choose your service, select an available date and
+            grab a time.
+        </p>
+
+    </div>
+
+
+    <div class="booking-wrapper">
+
+        <div class="booking-header">
+
+            <h2>
+                Book an Appointment
+            </h2>
+
+            <p>
+                Appointments are approximately the listed
+                service duration.
+            </p>
+
+        </div>
+
+
+        <div
+            class="booking-body"
+            id="bookingForm">
+
+            <div class="booking-grid">
+
+                <div>
+
+                    <div class="form-group">
+
+                        <label for="service">
+                            Service
+                        </label>
+
+                        <select id="service">
+
+                            <option value="Signature Fade — $35">
+                                Signature Fade — $35
+                            </option>
+
+                            <option value="Classic Cut — $30">
+                                Classic Cut — $30
+                            </option>
+
+                            <option value="Beard Service — $22">
+                                Beard Service — $22
+                            </option>
+
+                            <option value="Cut + Beard — $50">
+                                Cut + Beard — $50
+                            </option>
+
+                            <option value="Kids Cut — $25">
+                                Kids Cut — $25
+                            </option>
+
+                            <option value="Line-Up — $18">
+                                Line-Up — $18
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="First and last name">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="(215) 555-0198">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@email.com">
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Select a Date
+                        </label>
+
+                        <div class="calendar">
+
+                            <div class="calendar-top">
+
+                                <button
+                                    onclick="changeMonth(-1)">
+                                    ‹
+                                </button>
+
+                                <strong id="monthYear"></strong>
+
+                                <button
+                                    onclick="changeMonth(1)">
+                                    ›
+                                </button>
+
+                            </div>
+
+
+                            <div class="calendar-days">
+
+                                <div class="day-name">
+                                    SUN
+                                </div>
+
+                                <div class="day-name">
+                                    MON
+                                </div>
+
+                                <div class="day-name">
+                                    TUE
+                                </div>
+
+                                <div class="day-name">
+                                    WED
+                                </div>
+
+                                <div class="day-name">
+                                    THU
+                                </div>
+
+                                <div class="day-name">
+                                    FRI
+                                </div>
+
+                                <div class="day-name">
+                                    SAT
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="calendar-days"
+                                id="calendarDates">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Select a Time
+                        </label>
+
+                        <div
+                            class="time-grid"
+                            id="timeSlots">
+
+                            <p
+                                style="
+                                    color:#888;
+                                    font-size:13px;
+                                ">
+
+                                Choose a date first.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="booking-submit"
+                onclick="submitBooking()">
+
+                Confirm Appointment
+
+            </button>
+
+        </div>
+
+
+        <!-- CONFIRMATION -->
+
+        <div
+            class="confirmation"
+            id="confirmation">
+
+            <div class="confirmation-icon">
+                ✓
+            </div>
+
+            <h3>
+                You're on the books.
+            </h3>
+
+            <p>
+                Your appointment request has been saved for
+                this browser.
+            </p>
+
+
+            <div class="booking-details">
+
+                <div>
+                    <strong>Name</strong>
+                    <span id="confirmName"></span>
+                </div>
+
+                <div>
+                    <strong>Service</strong>
+                    <span id="confirmService"></span>
+                </div>
+
+                <div>
+                    <strong>Date</strong>
+                    <span id="confirmDate"></span>
+                </div>
+
+                <div>
+                    <strong>Time</strong>
+                    <span id="confirmTime"></span>
+                </div>
+
+                <div>
+                    <strong>Phone</strong>
+                    <span id="confirmPhone"></span>
+                </div>
+
+            </div>
+
+
+            <button
+                class="btn btn-red"
+                onclick="newBooking()">
+
+                Book Another Appointment
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="section contact-section">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            Find Us
+        </div>
+
+        <h2>
+            Come see us.
+        </h2>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+
+            <h3>
+                Liberty Line Barbershop
+            </h3>
+
+            <div class="contact-line">
+
+                <strong>
+                    Address
+                </strong>
+
+                <span>
+                    1832 N Broad Street<br>
+                    Philadelphia, PA 19121
+                </span>
+
+            </div>
+
+
+            <div class="contact-line">
+
+                <strong>
+                    Phone
+                </strong>
+
+                <span>
+                    (215) 555-0148
+                </span>
+
+            </div>
+
+
+            <div class="contact-line">
+
+                <strong>
+                    Hours
+                </strong>
+
+                <span>
+                    Mon–Fri: 9:00 AM – 7:00 PM<br>
+                    Saturday: 8:00 AM – 5:00 PM<br>
+                    Sunday: Closed
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="map">
+
+            <div>
+
+                <strong>
+                    North Broad & Montgomery
+                </strong>
+
+                <p>
+                    Philadelphia, Pennsylvania
+                </p>
+
+                <br>
+
+                <small>
+                    Easy street parking nearby ·
+                    SEPTA accessible
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-    © 2026 Philly Fresh Cuts
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <h3>
+                Liberty Line Barbershop
+            </h3>
+
+            <p>
+                Classic Philly service. Modern cuts.
+                Built for the neighborhood.
+            </p>
+
+        </div>
+
+
+        <div class="footer-right">
+
+            © 2026 Liberty Line Barbershop<br>
+            Philadelphia, Pennsylvania
+
+        </div>
+
+    </div>
+
+
+    <!-- IMPORTANT DEMO DISCLAIMER -->
+
+    <div class="demo-disclaimer">
+
+        <strong>
+            ⚠ PROMOTIONAL DEMO — NOT A REAL BUSINESS
+        </strong>
+
+        This website is strictly a promotional demo created by
+        Lynx &amp; Co. Web Studio. Liberty Line Barbershop is a
+        fictional business created for demonstration purposes
+        and is not a real business. All names, reviews, addresses,
+        contact information, services, pricing, and other business
+        details shown on this website are fictional.
+
+    </div>
 
 </footer>
 
 
-</body>
+<script>
 
+/* =========================
+   NAVIGATION
+========================= */
+
+function showSection(section) {
+
+    const element =
+        document.getElementById(section);
+
+    if (!element) return;
+
+    element.scrollIntoView({
+        behavior: "smooth"
+    });
+
+    document
+        .getElementById("nav")
+        .classList.remove("active");
+}
+
+
+function toggleMenu() {
+
+    document
+        .getElementById("nav")
+        .classList.toggle("active");
+
+}
+
+
+/* =========================
+   CALENDAR
+========================= */
+
+let currentDate = new Date();
+
+let selectedDate = null;
+
+let selectedTime = null;
+
+
+/*
+    Example unavailable appointments.
+    These are fictional demo bookings.
+*/
+
+const existingBookings = {
+
+    "2026-10-06": [
+        "10:00 AM",
+        "2:00 PM"
+    ],
+
+    "2026-10-08": [
+        "11:00 AM",
+        "4:00 PM"
+    ],
+
+    "2026-10-10": [
+        "9:00 AM",
+        "10:00 AM",
+        "1:00 PM"
+    ]
+
+};
+
+
+/* Business hours */
+
+const times = [
+
+    "9:00 AM",
+    "10:00 AM",
+    "11:00 AM",
+    "12:00 PM",
+    "1:00 PM",
+    "2:00 PM",
+    "3:00 PM",
+    "4:00 PM",
+    "5:00 PM",
+    "6:00 PM"
+
+];
+
+
+function dateKey(date) {
+
+    const year =
+        date.getFullYear();
+
+    const month =
+        String(
+            date.getMonth() + 1
+        ).padStart(2, "0");
+
+    const day =
+        String(
+            date.getDate()
+        ).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+
+}
+
+
+/* =========================
+   RENDER CALENDAR
+========================= */
+
+function renderCalendar() {
+
+    const year =
+        currentDate.getFullYear();
+
+    const month =
+        currentDate.getMonth();
+
+    const firstDay =
+        new Date(
+            year,
+            month,
+            1
+        ).getDay();
+
+    const daysInMonth =
+        new Date(
+            year,
+            month + 1,
+            0
+        ).getDate();
+
+
+    const monthName =
+        currentDate.toLocaleString(
+            "en-US",
+            {
+                month: "long",
+                year: "numeric"
+            }
+        );
+
+
+    document.getElementById(
+        "monthYear"
+    ).textContent = monthName;
+
+
+    const container =
+        document.getElementById(
+            "calendarDates"
+        );
+
+
+    container.innerHTML = "";
+
+
+    for (
+        let i = 0;
+        i < firstDay;
+        i++
+    ) {
+
+        const blank =
+            document.createElement("div");
+
+        container.appendChild(blank);
+
+    }
+
+
+    const today =
+        new Date();
+
+    today.setHours(
+        0,
+        0,
+        0,
+        0
+    );
+
+
+    for (
+        let day = 1;
+        day <= daysInMonth;
+        day++
+    ) {
+
+        const date =
+            new Date(
+                year,
+                month,
+                day
+            );
+
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+
+        button.className =
+            "calendar-date";
+
+
+        button.textContent =
+            day;
+
+
+        const isSunday =
+            date.getDay() === 0;
+
+
+        const isPast =
+            date < today;
+
+
+        if (
+            isSunday ||
+            isPast
+        ) {
+
+            button.disabled = true;
+
+        }
+
+
+        if (
+            selectedDate &&
+            dateKey(date) ===
+            dateKey(selectedDate)
+        ) {
+
+            button.classList.add(
+                "selected"
+            );
+
+        }
+
+
+        button.onclick =
+            function() {
+
+                selectDate(date);
+
+            };
+
+
+        container.appendChild(
+            button
+        );
+
+    }
+
+}
+
+
+/* =========================
+   CHANGE MONTH
+========================= */
+
+function changeMonth(direction) {
+
+    currentDate.setMonth(
+        currentDate.getMonth() +
+        direction
+    );
+
+    renderCalendar();
+
+}
+
+
+/* =========================
+   SELECT DATE
+========================= */
+
+function selectDate(date) {
+
+    selectedDate = date;
+
+    selectedTime = null;
+
+    renderCalendar();
+
+    renderTimes();
+
+}
+
+
+/* =========================
+   RENDER TIMES
+========================= */
+
+function renderTimes() {
+
+    const container =
+        document.getElementById(
+            "timeSlots"
+        );
+
+
+    container.innerHTML = "";
+
+
+    if (!selectedDate) {
+
+        container.innerHTML =
+            `<p style="color:#888;font-size:13px;">
+                Choose a date first.
+            </p>`;
+
+        return;
+
+    }
+
+
+    const key =
+        dateKey(selectedDate);
+
+
+    const unavailable =
+        existingBookings[key] || [];
+
+
+    const savedBookings =
+        JSON.parse(
+            localStorage.getItem(
+                "libertyLineBookings"
+            ) || "[]"
+        );
+
+
+    const userBookedTimes =
+        savedBookings
+            .filter(
+                booking =>
+                    booking.date === key
+            )
+            .map(
+                booking =>
+                    booking.time
+            );
+
+
+    times.forEach(time => {
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+
+        button.className =
+            "time-btn";
+
+
+        button.textContent =
+            time;
+
+
+        const unavailableSlot =
+            unavailable.includes(time) ||
+            userBookedTimes.includes(time);
+
+
+        if (unavailableSlot) {
+
+            button.disabled = true;
+
+            button.style.opacity =
+                "0.35";
+
+            button.style.cursor =
+                "not-allowed";
+
+            button.textContent =
+                time + " · Taken";
+
+        }
+
+
+        button.onclick =
+            function() {
+
+                if (
+                    unavailableSlot
+                ) return;
+
+
+                document
+                    .querySelectorAll(
+                        ".time-btn"
+                    )
+                    .forEach(
+                        btn =>
+                            btn.classList
+                                .remove(
+                                    "selected"
+                                )
+                    );
+
+
+                button.classList.add(
+                    "selected"
+                );
+
+
+                selectedTime =
+                    time;
+
+            };
+
+
+        container.appendChild(
+            button
+        );
+
+    });
+
+}
+
+
+/* =========================
+   SUBMIT BOOKING
+========================= */
+
+function submitBooking() {
+
+    const name =
+        document
+            .getElementById("name")
+            .value
+            .trim();
+
+
+    const phone =
+        document
+            .getElementById("phone")
+            .value
+            .trim();
+
+
+    const email =
+        document
+            .getElementById("email")
+            .value
+            .trim();
+
+
+    const service =
+        document
+            .getElementById("service")
+            .value;
+
+
+    if (!name) {
+
+        alert(
+            "Please enter your name."
+        );
+
+        return;
+
+    }
+
+
+    if (!phone) {
+
+        alert(
+            "Please enter your phone number."
+        );
+
+        return;
+
+    }
+
+
+    if (!email) {
+
+        alert(
+            "Please enter your email."
+        );
+
+        return;
+
+    }
+
+
+    if (!selectedDate) {
+
+        alert(
+            "Please select an appointment date."
+        );
+
+        return;
+
+    }
+
+
+    if (!selectedTime) {
+
+        alert(
+            "Please select an appointment time."
+        );
+
+        return;
+
+    }
+
+
+    const booking = {
+
+        name: name,
+
+        phone: phone,
+
+        email: email,
+
+        service: service,
+
+        date: dateKey(
+            selectedDate
+        ),
+
+        time: selectedTime
+
+    };
+
+
+    const bookings =
+        JSON.parse(
+            localStorage.getItem(
+                "libertyLineBookings"
+            ) || "[]"
+        );
+
+
+    bookings.push(
+        booking
+    );
+
+
+    localStorage.setItem(
+        "libertyLineBookings",
+        JSON.stringify(bookings)
+    );
+
+
+    document.getElementById(
+        "confirmName"
+    ).textContent =
+        name;
+
+
+    document.getElementById(
+        "confirmService"
+    ).textContent =
+        service;
+
+
+    document.getElementById(
+        "confirmDate"
+    ).textContent =
+        selectedDate.toLocaleDateString(
+            "en-US",
+            {
+                weekday: "long",
+                month: "long",
+                day: "numeric",
+                year: "numeric"
+            }
+        );
+
+
+    document.getElementById(
+        "confirmTime"
+    ).textContent =
+        selectedTime;
+
+
+    document.getElementById(
+        "confirmPhone"
+    ).textContent =
+        phone;
+
+
+    document.getElementById(
+        "bookingForm"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "confirmation"
+    ).classList.add(
+        "show"
+    );
+
+}
+
+
+/* =========================
+   NEW BOOKING
+========================= */
+
+function newBooking() {
+
+    document.getElementById(
+        "bookingForm"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "confirmation"
+    ).classList.remove(
+        "show"
+    );
+
+
+    document.getElementById(
+        "name"
+    ).value = "";
+
+
+    document.getElementById(
+        "phone"
+    ).value = "";
+
+
+    document.getElementById(
+        "email"
+    ).value = "";
+
+
+    selectedDate = null;
+
+    selectedTime = null;
+
+
+    renderCalendar();
+
+    renderTimes();
+
+}
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+renderCalendar();
+
+</script>
+
+</body>
 </html>
